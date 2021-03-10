@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
   has_many :favorites
+  has_many :favorite_questions, through: :favorites, source: :question
 
   validates :nickname, presence: true
 

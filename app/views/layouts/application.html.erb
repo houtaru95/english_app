@@ -26,7 +26,9 @@
           </div> 
           <div class="header_right_down">
             <div class="nickname">
+            <%= link_to user_path(current_user.id), class:"user-nickname" do %>
               <%= current_user.nickname %>
+            <% end %>
             </div>
             <div class="log_out">
               <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"log_out" %>
