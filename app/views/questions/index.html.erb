@@ -31,4 +31,19 @@
   <% end %>
 </div>
 
+<div class="tags_index">
+  <% @tags.each do |tag| %>
+    <%= link_to "#{tag.name}(#{tag.taggings_count})", questions_path(tag: tag.name) %>
+  <% end %>
+</div>
+
+<% if @question.present? %>
+  <div class="tagging_titles">
+    <% @question.each do |question| %>
+      <span><%= question.title%> by<%= question.user.nickname%></span>
+    <% end %>
+  </div>
+<% end %>
+
+
 

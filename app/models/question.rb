@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
 
-  acts_as_taggable
+  acts_as_taggable_on :tags
 
   has_many :answers, dependent: :destroy
   has_many :favorites, dependent: :destroy
