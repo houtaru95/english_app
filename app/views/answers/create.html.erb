@@ -1,0 +1,9 @@
+<h3>Thank you for your solving my question!!!</h3>
+
+<% if @answer.user_answer == @question.answer_num %>
+  <p>GOOD JOB!!!</p>
+<% else %>
+  <p>TRY AGAIN!!!</p>
+<% end %>
+
+<%= link_to "TOP PAGE", root_path %>
