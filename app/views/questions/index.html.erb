@@ -46,4 +46,11 @@
   </div>
 </div>
 
+<div class="tags_index">
+  <% @tags.each do |tag| %>
+    <%= link_to "#{tag.name}(#{tag.taggings_count})", questions_path(tag: tag.name) %>
+  <% end %>
+</div>
+
+
 
