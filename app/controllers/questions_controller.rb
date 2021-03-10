@@ -9,10 +9,6 @@ class QuestionsController < ApplicationController
       @questions = Question.all
     end
     @tags = Question.tag_counts_on(:tags).order('count DESC')
-    # @questions = Question.all
-    # if @tag = params[:tag]
-    #   @question = Question.tagged_with(params[:tag])
-    # end
   end
 
   def new

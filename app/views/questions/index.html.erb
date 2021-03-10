@@ -37,13 +37,5 @@
   <% end %>
 </div>
 
-<% if @question.present? %>
-  <div class="tagging_titles">
-    <% @question.each do |question| %>
-      <span><%= question.title%> by<%= question.user.nickname%></span>
-    <% end %>
-  </div>
-<% end %>
-
 
 
