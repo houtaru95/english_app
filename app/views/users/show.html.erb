@@ -1,5 +1,17 @@
-<h1>My Page</h1>
-<p>Hello!!!<%= @user.nickname%>!!!</p>
-
-<%= link_to "Favorite Questions", favorites_users_path%>
+<div class="my_page">
+  <h1>My Page</h1>
+  <p>Hello!!!<%= @user.nickname%>!!!</p>
+  <div class="own_favorite_questions">
+    <%= link_to "Favorite Questions", favorites_users_path%>
+  </div>
+  <div class="questions_you_posted">
+    <% @questions.each do |question| %>
+      <div class="question_you_posted">
+        <%= link_to question_path(question.id), class:"question-you-posted" do %>
+          <%= question.title %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
