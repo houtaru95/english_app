@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: [:create]
     resource :favorites, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 
   get 'tags/:tag', to: 'questions#index', as: :tag

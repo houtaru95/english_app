@@ -7,6 +7,8 @@ body{
   font-family:'Times New Roman', Times, serif;
   height: 100％;
   width: 100%;
+  overflow: scroll;
+  background:radial-gradient( rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
 }
 
 .header{
@@ -137,11 +139,15 @@ h1{
 .time_line{
   margin: 20px 10px 5px 10px;
   padding-bottom: 12px;
+  height:100%;
+  width: 100%;
   font-size: 30px;
   border-bottom: 3px solid black;
+  background-color: white;
 }
 
 .container{
+  background:radial-gradient( rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
   margin: 5px 20px;
   height: 70vh;
   display: flex;
@@ -149,17 +155,49 @@ h1{
 }
 
 .left_side_container{
-  border: dotted 2px coral;
+  /* border: dotted 2px coral; */
+  width: 30%;
 }
 
 .center_container{
-  border: dotted 3px coral;
+  /* border: dotted 3px coral; */
   width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.search-input{
+  height: 25px;
+  width: 60%;
+  text-align: center;
+}
+
+.search_btn{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search-btn{
+  background-color:white ;
+  color:black;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .right_side_container{
-  border: dotted 2px coral;
-  margin-top: 20px;
+  /* border: dotted 2px coral; */
+  width: 30%;
+  padding: 20px;
+  text-align: center;
 }
 
 .tags_index{
