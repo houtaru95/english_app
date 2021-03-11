@@ -1,7 +1,16 @@
 <div class="container_wrap">
-  <h2 style="color: red;" class="time_line">
-    Questions TimeLine
-  </h2>
+  <div class="under_header">
+    <div style="color: red;" class="Time_Line">
+      <p class="Time-Line">Time Line</p>
+    </div>
+    <div style="color: red;" class="Search_Words">
+      <p class="Search-Words">Search for Titles</p>
+    </div>
+    <div style="color: red;" class="Tags_List">
+      <p class="Tags-List">Tags List</p>
+    </div>
+  </div>
+  </div>
   <div class="container">
     <div class="left_side_container">
       <% @questions.each do |question|%>
@@ -35,7 +44,7 @@
       <div class="search_form">
         <%= form_with(url: search_questions_path , local: true, method: :get, class: "search-form") do |f| %>
           <div class="search_input">
-            <%= f.text_field :keyword, placeholder: "Let's Search Questions!!", class: "search-input" %>
+            <%= f.text_field :keyword, placeholder: "Let's Search for Questions!!", class: "search-input" %>
           </div>
           <div class="search_btn"> 
             <%= f.submit "GO", class: "search-btn" %>
