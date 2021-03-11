@@ -1,3 +1,7 @@
+.field_with_errors {
+  display: contents;
+}
+
 body{
   /* border:solid 10px black; */
   font-family:'Times New Roman', Times, serif;
