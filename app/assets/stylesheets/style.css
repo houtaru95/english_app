@@ -53,7 +53,9 @@ h1{
 }
 
 .tag_container .tag{
+  font-size: 15px;
   margin: 10px 5px;
+  padding: 1px;
 }
 
 .log_in,
@@ -67,7 +69,7 @@ h1{
 
 
 .title{
-  font-size: 22px;
+  font-size: 25px;
   text-align: right;
 }
 
@@ -186,7 +188,7 @@ h1{
 }
 
 .container{
-  background:radial-gradient( rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
+  background:radial-gradient( rgb(240, 192, 200),rgb(247, 190, 200) 30%, rgb(247, 147, 210));
   /* margin: 5px 20px; */
   height: 70vh;
   display: flex;
@@ -203,9 +205,30 @@ h1{
   /* border: dotted 3px coral; */
   width: 40%;
   display: flex;
-  justify-content: center;
-  margin-top: 180px;
+  flex-direction: column;
+  margin-top: 120px;
+  /* justify-content: center; */
   /* align-items: center; */
+}
+
+.post_btn{
+  text-align: center;
+  background-color: white;
+  margin-left: 220px;
+  margin-bottom: 30px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.post-btn{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.fa-angle-up{
+  margin-top: 10px;
 }
 
 .search_form{
@@ -218,13 +241,14 @@ h1{
 .search-input{
   height: 25px;
   width: 60%;
+  margin-top: 20px;
   margin-left: 10px;
   text-align: center;
 }
 
 .search_btn{
   text-align: center;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .search-btn{
