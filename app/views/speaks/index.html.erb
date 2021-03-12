@@ -1,12 +1,14 @@
 <div class="speaks_box">
   <% @speaks.each do |speak|%>
-    <div class="speak_box">
-      <div class="speak_subject">
-      【<%= speak.subject%>】
+    <%= link_to speak_path(speak.id) do %>
+      <div class="speak_box">
+        <div class="speak_subject">
+        【<%= speak.subject%>】
+        </div>
+        <div class="speak_voice">
+          <%= speak.voice %>
+        </div>
       </div>
-      <div class="speak_voice">
-        <%= speak.voice %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

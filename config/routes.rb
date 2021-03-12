@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'homes/index'
-
   devise_for :users
+  get 'homes/index'
   root to:"homes#index"
+
 
   resources :users, only: [:index, :show] do
     collection do
@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :speaks, only: [:index, :new, :create]
+  resources :speaks do
+    resources :comments, only: [:create]
+  end
 
   resources :questions do
     resources :answers, only: [:create]

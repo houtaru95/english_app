@@ -1,12 +1,15 @@
 <div class="speak_container">
-  <h1>Let's Cast your Voice!!!</h1>
-  <h3>Feel free to Use English!!!</h3>
+  <div class="speak_header">
+    Let's Cast your Voice!!!
+  </div>
   <div class="voice_container">
-    <h2>Cast</h2>
-    <%= form_with model: @speak, url: speaks_path, local: true do |f| %>
-      <%= f.text_field :subject, placeholder: "subject" %>
-      <%= f.text_area :voice, placeholder: "Voice Here", rows: 4 %>
-      <%= f.submit "GO" %>
+    <div class="voice_header">
+      CAST
+    </div>
+    <%= form_with model: @speak, url: speaks_path, class:"speak-form" ,local: true do |f| %>
+      <%= f.text_field :subject, placeholder: "subject", class:"speak-subject" %>
+      <%= f.text_area :voice, placeholder: "Cast Voice", class:"speak-voice", rows: 4 %>
+      <%= f.submit "GO", class:"speak-btn" %>
     <% end %>
   </div>
 </div>

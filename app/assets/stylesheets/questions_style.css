@@ -91,18 +91,18 @@ h1{
   margin: 5px;
 }
 
-.header_right_up{
+/* .header_right_up{ */
   /* border: solid 3px rgb(255, 115, 0); */
-  font-size: 25px;
+  /* font-size: 25px;
   font-weight: bold;
   margin-top: 25px;
   text-align: center;
-}
+} */
 
 .header_right_down{
   display: flex;
   justify-content: right;
-  margin-top: 15px;
+  margin: 60px 15px 0 0;
   /* border: solid 3px rgb(255, 0, 0); */
   text-align: right;
 }
@@ -110,7 +110,7 @@ h1{
 .nickname{
   /* border: solid 2px lightseagreen; */
   margin: 10px 5px 0px 5px;
-  font-size: 20px;
+  font-size: 25px;
   text-align: right;
 }
 
@@ -122,7 +122,7 @@ h1{
 .log_out{
   /* border: solid 2px limegreen; */
   margin: 10px 5px 0px 5px;
-  font-size: 20px;
+  font-size: 23px;
   text-align: right;
 }
 
@@ -188,7 +188,7 @@ h1{
 }
 
 .container{
-  background:radial-gradient( rgb(240, 192, 200),rgb(247, 190, 200) 30%, rgb(247, 147, 210));
+  /* background:radial-gradient( rgb(240, 192, 200),rgb(247, 190, 200) 30%, rgb(247, 147, 210)); */
   /* margin: 5px 20px; */
   height: 70vh;
   display: flex;
@@ -216,9 +216,6 @@ h1{
   border: none;
 }
 
-/* .post-btn{
-  text-decoration: none;
-} */
 
 .post_btn{
   text-align: center;

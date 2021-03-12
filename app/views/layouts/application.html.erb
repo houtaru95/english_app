@@ -23,9 +23,9 @@
         </div>
       <% if user_signed_in? %>
         <div class="header_right">
-          <div class="header_right_up">
-            <%= link_to "POST", new_question_path, class: "post" %>
-          </div> 
+          <%# <div class="header_right_up"> %>
+            <%# <%= link_to "POST", new_question_path, class: "post" %> 
+          <%# </div>  %>
           <div class="header_right_down">
             <div class="nickname">
             <%= link_to user_path(current_user.id), class:"user-nickname" do %>
