@@ -41,12 +41,14 @@
       <% end %>
     </div>
     <div class="center_container">
-      <div class="post_btn">
+      <%# <div class="post_btn_container"> %>
         <%= link_to new_question_path, class: "post-btn" do %>
-        <i class="fas fa-angle-up"></i>
-        <p>POST</p>
+          <button class="post_btn">
+            <i class="fas fa-angle-up"></i>
+            <p>POST</p>
+          </button>
         <% end %>
-      </div>
+      <%# </div> %>
       <div class="search_form">
         <%= form_with(url: search_questions_path , local: true, method: :get, class: "search-form") do |f| %>
           <div class="search_input">
