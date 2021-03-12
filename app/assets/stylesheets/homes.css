@@ -1,0 +1,46 @@
+.home_menu{
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.to_cast_box{
+  margin-bottom: 50px;
+}
+
+
+.to_cast{
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.to-cast{
+  background-color: lightseagreen;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* .to_post_box{
+} */
+
+.to_post{
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.to-post{
+  background-color: rgb(247, 142, 160);
+  color: black;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+}

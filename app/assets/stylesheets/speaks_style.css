@@ -9,6 +9,8 @@
   /* justify-content: center;
   align-items: center; */
   width: fit-content;
+  padding: 10px;
+  margin: 10px;
 }
 
 .speak_subject{
