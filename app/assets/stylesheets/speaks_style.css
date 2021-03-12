@@ -1,0 +1,22 @@
+.speaks_box{
+  height:75vh
+}
+
+.speak_box{
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  width: fit-content;
+}
+
+.speak_subject{
+  border: solid 1px red;
+  width: fit-content;
+  text-align: left;
+}
+
+.speak_voice{
+  border: solid 1px lightseagreen;
+}
