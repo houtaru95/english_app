@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'speaks/index'
   devise_for :users
   root to:"questions#index"
 
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
       get :favorites
     end
   end
+
+  resources :speaks, only: [:index, :new, :create]
 
   resources :questions do
     resources :answers, only: [:create]

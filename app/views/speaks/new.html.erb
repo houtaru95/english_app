@@ -1,0 +1,12 @@
+<div class="speak_container">
+  <h1>Let's Cast your Voice!!!</h1>
+  <h3>Feel free to Use English!!!</h3>
+  <div class="voice_container">
+    <h2>Cast</h2>
+    <%= form_with model: @speak, url: speaks_path, local: true do |f| %>
+      <%= f.text_field :subject, placeholder: "subject" %>
+      <%= f.text_area :voice, placeholder: "Voice Here", rows: 4 %>
+      <%= f.submit "GO" %>
+    <% end %>
+  </div>
+</div>
