@@ -1,24 +1,119 @@
+/* 以下、speak/views/new.html.erb */
+
+.speak_header{
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  background: linear-gradient(to bottom, rgba(101, 199, 206, 0.973),rgb(144, 187, 187) 70%, rgb(175, 233, 214));
+  height: 120px;
+}
+
+.speak_show_container{
+  height: 75vh;
+}
+  
+.speak_title{
+  text-align: center;
+  font-size: 40px;
+  font-style: bold;
+  margin-top: 40px;
+}
+
+.speak_container{
+  height: 75vh;
+}
+
+.voice_header{
+  text-align: center;
+  font-size: 30px;
+  font-style: bold;
+  margin-top: 50px;
+}
+
+
+.speak-subject{
+  margin-top: 15px;
+  font-size: 20px;
+  width: 200px;
+}
+
+.speak-voice{
+  margin-top: 16px;
+  font-size: 20px;
+  width: 400px;
+}
+
+.speak-btn{
+  border: none;
+  color: white;
+  background-color: lightseagreen;
+  font-size: 20px;
+  padding: 7px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+}
+
+/* 以上、speak/views/new.html.erb */
+
+/* 以下、speak/views/index.html.erb */
+
 .speaks_box{
-  height:75vh
+  height:75vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.speaks_box_left{
+  width: 25%;
+  margin-right: 60px;
+}
+
+.speaks_box_center{
+  margin: 20px;
+  padding: 10px;
+}
+
+.speak-box{
+  text-decoration: none;
 }
 
 .speak_box{
-  border: solid 2px black;
+  border: solid 1px black;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
   width: fit-content;
+  color: black;
   padding: 10px;
   margin: 10px;
 }
 
 .speak_subject{
-  border: solid 1px red;
   width: fit-content;
   text-align: left;
 }
 
 .speak_voice{
-  border: solid 1px lightseagreen;
+  /* border: solid 1px lightseagreen; */
+}
+
+.speak-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.speaks_box_right{
+  width: 25%;
+}
+
+.footer_speak{
+  background: linear-gradient(to bottom, rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
+  font-size: 15px;
+  bottom: 0 ;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
 }

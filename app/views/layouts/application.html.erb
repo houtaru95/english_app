@@ -12,46 +12,6 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header_bar">
-        <div class="header_left">
-        </div>
-        <div class="header_center">
-          <%= link_to root_path, class:"logo" do %>
-            <h1 class="app-logo">English App</h1>
-          <% end %>
-        </div>
-      <% if user_signed_in? %>
-        <div class="header_right">
-          <div class="header_right_up">
-            <%= link_to "POST", new_question_path, class: "post" %>
-          </div> 
-          <div class="header_right_down">
-            <div class="nickname">
-            <%= link_to user_path(current_user.id), class:"user-nickname" do %>
-              <%= current_user.nickname %>
-            <% end %>
-            </div>
-            <div class="log_out">
-              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"log_out" %>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <div class="header_right">
-          <div class="header_right_down_only">
-            <%= link_to "Log In", new_user_session_path, class: "log_in" %>
-            <%= link_to "New Account", new_user_registration_path, class: "new_account" %>
-          </div>
-        </div>
-      <% end %>
-      </div>
-    </header>
     <%= yield %>
-    <footer>
-      <div>
-        Copyright English App 2021.
-      </div>
-    </footer>
   </body>
 </html>
