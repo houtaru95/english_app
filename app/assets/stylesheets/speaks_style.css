@@ -5,16 +5,11 @@
   font-size: 40px;
   font-style: bold;
   margin-top: 40px;
-  /* border: solid 1px black; */
 }
 
 .speak_container{
   height: 75vh;
 }
-
-/* .voice_container{ */
-  /* border: solid 1px black; */
-/* } */
 
 .voice_header{
   text-align: center;
@@ -23,19 +18,14 @@
   margin-top: 50px;
 }
 
-/* .speak-form{ */
-  /* margin-top: 5px; */
-/* } */
 
 .speak-subject{
-  text-align: center;
   margin-top: 15px;
   font-size: 20px;
   width: 200px;
 }
 
 .speak-voice{
-  /* text-align: center; */
   margin-top: 16px;
   font-size: 20px;
   width: 400px;
@@ -54,10 +44,27 @@
 
 /* 以上、speak/views/new.html.erb */
 
-
+/* 以下、speak/views/index.html.erb */
 
 .speaks_box{
-  height:75vh
+  height:75vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.speaks_box_left{
+  width: 25%;
+  margin-right: 60px;
+}
+
+.speaks_box_center{
+  margin: 20px;
+  padding: 10px;
+}
+
+.speak-box{
+  text-decoration: none;
 }
 
 .speak_box{
@@ -65,18 +72,18 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
+  color: black;
   padding: 10px;
   margin: 10px;
 }
 
 .speak_subject{
-  border: solid 1px red;
   width: fit-content;
   text-align: left;
 }
 
 .speak_voice{
-  border: solid 1px lightseagreen;
+  /* border: solid 1px lightseagreen; */
 }
 
 .speak-form{
@@ -84,4 +91,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.speaks_box_right{
+  width: 25%;
 }

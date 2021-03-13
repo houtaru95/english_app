@@ -1,4 +1,5 @@
 class SpeaksController < ApplicationController
+
   def index
     @speaks = Speak.all
   end
@@ -10,10 +11,16 @@ class SpeaksController < ApplicationController
   def create
     @speak = Speak.new(speak_params)
     if @speak.save
-      redirect_to speaks_index_path
+      redirect_to speaks_path
     else
       render :new
     end
+  end
+
+  def show
+    @speak = Speak.find(params[:id])
+    @comment = Comment.new
+    @comments = @speak.comments.includes(:user)
   end
 
   private

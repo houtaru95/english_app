@@ -1,6 +1,9 @@
 <div class="speaks_box">
+  <div class="speaks_box_left">
+  </div>
+  <div class="speaks_box_center">
   <% @speaks.each do |speak|%>
-    <%= link_to speak_path(speak.id) do %>
+    <%= link_to speak_path(speak.id), class:"speak-box" do %>
       <div class="speak_box">
         <div class="speak_subject">
         【<%= speak.subject%>】
@@ -11,4 +14,7 @@
       </div>
     <% end %>
   <% end %>
+  </div>
+  <div class="speaks_box_right">
+  </div>
 </div>
