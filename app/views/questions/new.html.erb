@@ -1,9 +1,9 @@
 <%= render "shared/header_question" %>
 
 <div class="question_container">
-  <h2 class="question_header">
+  <h1 class="question_new_header">
     Let's Make a Question!!!
-  </h2>
+  </h1>
   <div class="question_input">
     <%= form_with model: @question, url: questions_path, local: true do |f| %>
       <div class="question_title">

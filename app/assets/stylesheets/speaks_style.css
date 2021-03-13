@@ -8,6 +8,7 @@
 
 .speak_show_container{
   height: 75vh;
+  overflow: scroll;
 }
   
 .speak_title{
@@ -19,6 +20,7 @@
 
 .speak_container{
   height: 75vh;
+  overflow: scroll;
 }
 
 .voice_header{
@@ -27,7 +29,6 @@
   font-style: bold;
   margin-top: 50px;
 }
-
 
 .speak-subject{
   margin-top: 15px;
@@ -61,6 +62,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  overflow: scroll;
 }
 
 .speaks_box_left{
@@ -109,10 +111,10 @@
 
 .footer_speak{
   background: linear-gradient(to bottom, rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
-  font-size: 15px;
+  font-size: 22px;
   bottom: 0 ;
   text-align: center;
-  height: 80px;
+  height: 120px;
   display: flex;
   justify-content:space-around;
   align-items:center;

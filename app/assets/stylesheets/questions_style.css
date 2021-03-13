@@ -15,6 +15,11 @@ body{
   height: 120px;
 }
 
+.question_new_header{
+  font-size: 35px;
+  margin-left: 20px;
+}
+
 .header_left{
   margin: 10px 0 0 10px;
 }
@@ -22,6 +27,11 @@ body{
 .logo{
   text-decoration: none;
   color: black;
+}
+
+.app-logo{
+  font-size: 45px;
+  margin-top: 35px;
 }
 
 h1{
@@ -122,6 +132,10 @@ h1{
 
 .new_account{
   margin: 2px 5px 0px 5px;
+}
+
+.container_wrap{
+  overflow: auto;
 }
 
 .under_header{
@@ -423,10 +437,10 @@ h1{
 
 .footer_question{
   background: linear-gradient(to bottom, rgba(101, 199, 206, 0.973),rgb(144, 187, 187) 70%, rgb(175, 233, 214));
-  font-size: 15px;
+  font-size: 22px;
   bottom: 0 ;
   text-align: center;
-  height: 80px;
+  height: 120px;
   display: flex;
   justify-content:space-around;
   align-items:center;
