@@ -1,6 +1,16 @@
 /* 以下、speak/views/new.html.erb */
 
 .speak_header{
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  background: linear-gradient(to bottom, rgba(101, 199, 206, 0.973),rgb(144, 187, 187) 70%, rgb(175, 233, 214));
+  height: 120px;
+}
+
+.speak_show_container{
+  height: 75vh;
+}
+  
+.speak_title{
   text-align: center;
   font-size: 40px;
   font-style: bold;
@@ -95,4 +105,15 @@
 
 .speaks_box_right{
   width: 25%;
+}
+
+.footer_speak{
+  background: linear-gradient(to bottom, rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
+  font-size: 15px;
+  bottom: 0 ;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
 }

@@ -19,8 +19,9 @@ class SpeaksController < ApplicationController
 
   def show
     @speak = Speak.find(params[:id])
-    @comment = Comment.new
     @comments = @speak.comments.includes(:user)
+    @comment = Comment.new
+    @response_comments = Comment.new   #特定のcommentに対するresponseをするために生成
   end
 
   private

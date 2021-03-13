@@ -1,29 +1,50 @@
-<h1>Showing Page</h1>
-<div>
+<%= render "shared/header_speak" %>
+
+<div class="speak_show_container">
+  <h1>Showing Page</h1>
   <div>
-    subject:  <%= @speak.subject %>
-  </div>
-  <div>
-    voice:  <%= @speak.voice %>
-  </div> 
-  <p>by <%= @speak.user.nickname%></p>
-  <div>
-    <% if user_signed_in? %>
-      <%= form_with(model: [@speak, @comment],method: :post, local: true) do |f| %>
-        <%= f.text_area :text, placeholder: "Response", rows: "3" %>
-        <%= f.submit "Response" %>
-      <% end %>
-    <% else %>
-      <strong><p>You need to sign in if you want to comment!!!</p></strong>
-    <% end %>
-  </div>
-  <div class="comments">
+    <div>
+      subject:  <%= @speak.subject %>
+    </div>
+    <div>
+      voice:  <%= @speak.voice %>
+    </div> 
+    <p>by <%= @speak.user.nickname%></p>
+
+    <div class="comments">
       <h4>＜comments below＞</h4>
       <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>：</strong>
-          <%= comment.text %>
-        </p>
+        <% if comment.response_comment.present? %>
+          <% next %>
+        <% end %>
+        <p><%= link_to comment.user.nickname, user_path(comment.user_id) %>:<%= comment.text %></p>
+        <div class="response_area">
+          <% comment.responses.order(:created_at).each do |response| %>
+            <p> <%= response.user.nickname %> : <%=response.text%></p>
+          <% end %>
+        </div>
+        <div class="response_box">
+          <%= form_for [@speak, @response_comments] do |f| %>
+            <%# <p>コメントに返信する</p> %>
+            <%= f.hidden_field :response_comment, value: comment.id %>
+            <%= f.text_field :text %>
+            <%= f.submit "返信する"%>
+          <% end %>
+        </div>
       <% end %>
     </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= form_with(model: [@speak, @comment],method: :post, local: true) do |f| %> 
+          <%= f.text_area :text, placeholder: "Response", rows: "3" %>
+          <%= f.submit "新規コメント" %>
+        <% end %>
+      <% else %> 
+        <strong><p>You need to sign in if you want to comment!!!</p></strong>
+      <% end %> 
+    </div>
+  </div>
 </div>
+
+<%= render "shared/footer_speak" %>
