@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_043402) do
+ActiveRecord::Schema.define(version: 2021_03_14_063403) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_answer", null: false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2021_03_13_043402) do
     t.integer "response_comment"
     t.index ["speak_id"], name: "index_comments_on_speak_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "explanation", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_details_on_question_id"
   end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

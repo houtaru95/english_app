@@ -4,25 +4,24 @@ class QuestionsController < ApplicationController
   before_action :move_to_index, except: [:index, :search ]
 
   def index
-    if params[:tag]
-      @questions = Question.tagged_with(params[:tag])
-    else
-      @questions = Question.all
-    end
-    @tags = Question.tag_counts_on(:tags).order('count DESC')
-  end
-
-  def new
+    @questions = Question.includes(:user)
     @question = Question.new
   end
 
+  def new
+    @question_detail = QuestionDetail.new
+  end
+
   def create
-    @question = Question.create(question_params)
-    if @question.save
+    @question_detail = QuestionDetail.new(question_params)
+    if @question_detail.valid?
+      @question_detail.save
       redirect_to(root_path)
     else
       render :new
     end
+
+    @questions = Question.all
   end
 
   def show
@@ -42,7 +41,7 @@ class QuestionsController < ApplicationController
       @questions += Question.where('title LIKE(?)', "%#{keyword}%")
     end
     @questions.uniq!
-    @tags = Question.tag_counts_on(:tags).order('count DESC')
+    # @tags = Question.tag_counts_on(:tags).order('count DESC')
   end
 
   private
@@ -52,7 +51,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :content, :choice_1, :choice_2, :choice_3, :choice_4, :answer_num, :tag_list).merge(user_id: current_user.id)
+    params.require(:question_detail).permit(:title, :content, :choice_1, :choice_2, :choice_3, :choice_4, :answer_num, :explanation).merge(user_id: current_user.id)
   end
 
   def move_to_index

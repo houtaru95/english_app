@@ -5,7 +5,8 @@
     Let's Make a Question!!!
   </h1>
   <div class="question_input">
-    <%= form_with model: @question, url: questions_path, local: true do |f| %>
+    <%= form_with model: @question_detail, url: questions_path, local: true do |f| %>
+      <%= render 'shared/error_messages', model: @question_detail %>
       <div class="question_title">
           <%= f.label :title, "Title" %><br />
           <%= f.text_field :title, autocomplete: "title", class:"question-title" %>
@@ -41,9 +42,9 @@
         <%= f.text_field :answer_num, autocomplete: "answer_num", class:"answer-num" %>
       </div>
 
-      <div class="tag_list">
-        <%= f.label :tag_list, "Tags" %><br />
-        <%= text_field_tag 'question[tag_list]', @question.tag_list, class:"tag-list" %>
+      <div class="question_content">
+        <%= f.label :explanation, "Explanation" %><br />
+        <%= f.text_area :explanation, autocomplete: "explanation",rows:3, class:"question-explanation" %>
       </div>
 
       <div class="question_submit">
