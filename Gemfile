@@ -57,3 +57,6 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'acts-as-taggable-on', '~> 6.0'
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0.beta2'
