@@ -2,6 +2,10 @@
 
 <% if @answer.user_answer == @question.answer_num %>
   <p>GOOD JOB!!!</p>
+  <p style="border-bottom: solid 2px black;">Explanation</p>
+  <div>
+    <%# <%= @detail.explanation %> 
+  </div>
 <% else %>
   <p>TRY AGAIN!!!</p>
 <% end %>

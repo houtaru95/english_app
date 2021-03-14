@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.create(answer_params)
+    @detail = @question.detail
   end
 
   def destroy
@@ -18,4 +19,5 @@ class AnswersController < ApplicationController
   def set_question
     @question = Question.find(params[:question_id])
   end
+
 end
