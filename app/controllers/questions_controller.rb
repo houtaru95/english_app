@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.includes(:user)
+    @question = Question.new
   end
 
   def new
@@ -19,6 +20,8 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+
+    @questions = Question.all
   end
 
   def show
