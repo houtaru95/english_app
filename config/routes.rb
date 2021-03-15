@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'tags/:tag', to: 'questions#index', as: :tag
+  get 'tags/:tag', to: 'speaks#index', as: :tag
 
   get 'favorites/index'
 

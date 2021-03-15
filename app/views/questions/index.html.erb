@@ -19,11 +19,11 @@
           <i class="fas fa-angle-right"></i>
           <%= link_to question.title, question_path(question.id), class:"title" %>
             <% if current_user.already_favorited?(question) %>
-              <%= link_to question_favorites_path(question), method: :delete, class:"fav_heart" do %> 
+              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
                 <i class="fas fa-heart"></i> 
               <% end %> 
             <% else %> 
-              <%= link_to question_favorites_path(question), method: :post, class:"fav_heart" do %> 
+              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
                 <i class="far fa-heart"></i> 
               <% end %> 
             <% end %> 
