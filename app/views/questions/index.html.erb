@@ -9,7 +9,7 @@
       <p class="Search-Words">Post or Search</p>
     </div>
     <div style="color: red;" class="Tags_List">
-      <p class="Tags-List">Tags List</p>
+      <p class="Tags-List">Populars</p>
     </div>
   </div>
   <div class="main_container">
@@ -55,6 +55,43 @@
       </div>
     </div>
     <div class="right_side_container">
+      <% @popular_questions.each_with_index do |question, i|%>
+        <div class="box">
+          <% if i == 0 %>
+            <i class="fas fa-crown">  </i>
+            <%= link_to question.title, question_path(question.id), class:"title" %>
+            <% if current_user.already_favorited?(question) %>
+              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                <i class="fas fa-heart"></i> 
+              <% end %> 
+            <% else %> 
+              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                <i class="far fa-heart"></i> 
+              <% end %> 
+            <% end %>
+            <%= question.favorites.count %>
+            <%= link_to question_path(question.id) , method: :delete, class:"delete" do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          <% else %>
+            <i class="fas fa-angle-right"></i>
+            <%= link_to question.title, question_path(question.id), class:"title" %>
+            <% if current_user.already_favorited?(question) %>
+              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                <i class="fas fa-heart"></i> 
+              <% end %> 
+            <% else %> 
+              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                <i class="far fa-heart"></i> 
+              <% end %> 
+            <% end %> 
+            <%= question.favorites.count %>
+            <%= link_to question_path(question.id) , method: :delete, class:"delete" do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>  
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

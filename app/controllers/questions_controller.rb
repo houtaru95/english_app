@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.includes(:user)
+    @popular_questions = Question.includes(:favorited_users).sort {|a,b| b.favorited_users.count <=> a.favorited_users.count}
     @question = Question.new
   end
 

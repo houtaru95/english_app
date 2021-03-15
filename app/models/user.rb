@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :speaks
   has_many :comments
   has_many :favorites
-  has_many :favorite_questions, through: :favorites, source: :question
+  has_many :favorited_questions, through: :favorites, source: :question
 
   validates :nickname, presence: true
 

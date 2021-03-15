@@ -9,11 +9,11 @@
       CAST
     </div>
     <%= form_with model: @speak, url: speaks_path, class:"speak-form" ,local: true do |f| %>
-      <%= f.text_field :subject, placeholder: "subject", class:"speak-subject" %>
-      <%= f.text_area :voice, placeholder: "Cast Voice", class:"speak-voice", rows: 4 %>
+      <%= f.text_field :subject, placeholder: "    \uf02d  subject", class:"speak-subject fa" %>
+      <%= f.text_area :voice, placeholder: "\uf028 cast voice", class:"speak-voice fas", rows: 4 %>
       <div class="tag_list">
       <%= f.label :tag_list, "Tags" %><br />
-        <%= text_field_tag 'speak[tag_list]', @speak.tag_list, class:"tag-list" %>
+        <%= text_field_tag 'speak[tag_list]', @speak.tag_list, placeholder: "\uf02c comma separated " ,class:"tag-list fas" %>
       </div>
       <%= f.submit "GO", class:"speak-btn" %>
     <% end %>
