@@ -66,6 +66,15 @@
 
 /* 以下、speak/views/index.html.erb */
 
+.speaks_under_header{
+  color: rgb(35, 45, 192);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-bottom: solid 2px black;
+}
+
 .speaks_box{
   height:75vh;
   display: flex;
@@ -75,13 +84,15 @@
 
 .speaks_box_left{
   width: 25%;
-  margin-right: 60px;
+  /* margin-right: 60px; */
+  border: solid 2px tomato;
 }
 
 .speaks_box_center{
-  margin: 20px;
-  padding: 10px;
+  /* margin: 20px; */
+  padding: 20px;
   overflow: scroll;
+  border: solid 2px blue;
 }
 
 .speak-box{
@@ -92,7 +103,8 @@
   border: solid 1px black;
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  text-align: left;
+  /* width: fit-content; */
   color: black;
   padding: 10px;
   margin: 10px;
@@ -112,10 +124,17 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border: solid 2px black;
 }
 
 .speaks_box_right{
   width: 25%;
+  padding: 20px;
+  border: solid 2px coral;
+}
+
+.tag-index{
+  margin-right: 40px;
 }
 
 .footer_speak{
