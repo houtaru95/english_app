@@ -13,14 +13,14 @@
   
 .speak_title{
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-style: bold;
   margin-top: 40px;
 }
 
 .speak_container{
-  height: 75vh;
-  overflow: scroll;
+  /* height: 75vh; */
+  /* overflow: scroll; */
 }
 
 .voice_header{
@@ -32,14 +32,23 @@
 
 .speak-subject{
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 18px;
   width: 200px;
 }
 
 .speak-voice{
   margin-top: 16px;
-  font-size: 20px;
-  width: 400px;
+  font-size: 18px;
+  width: 80%;
+}
+
+.tag_list{
+  margin-top: 10px;
+}
+
+.tag-list{
+  font-size: 18px ;
+  width: 100%;
 }
 
 .speak-btn{
@@ -61,8 +70,7 @@
   height:75vh;
   display: flex;
   text-align: center;
-  justify-content: center;
-  overflow: scroll;
+  justify-content: space-between;
 }
 
 .speaks_box_left{
@@ -73,6 +81,7 @@
 .speaks_box_center{
   margin: 20px;
   padding: 10px;
+  overflow: scroll;
 }
 
 .speak-box{

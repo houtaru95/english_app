@@ -7,6 +7,7 @@ class SpeaksController < ApplicationController
     else
       @speaks = Speak.includes(:user)
     end
+    @speak = Speak.new 
     @tags = Speak.tag_counts_on(:tags).order('count DESC')
   end
 
