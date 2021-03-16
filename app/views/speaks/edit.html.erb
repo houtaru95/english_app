@@ -1,58 +1,23 @@
 <%= render "shared/header_speak" %>
 
 <div class="speak_show_container">
-  <h1>Showing Page</h1>
-  <div>
-    <div class="speak_container">
-      <div class="speak_title">
-        Let's Cast your Voice!!!
-      </div>
-      <div class="voice_container">
-        <div class="voice_header">
-          CAST
-        </div>
-        <%= form_with model: @speak, url: speak_path(@speak.id), class:"speak-form" ,local: true do |f| %>
-          <%= f.text_field :subject, placeholder: "    \uf02d  subject", class:"speak-subject fa" %>
-          <%= f.text_area :voice, placeholder: "\uf028 cast voice", class:"speak-voice fas", rows: 4 %>
-          <div class="tag_list">
-          <%= f.label :tag_list, "Tags" %><br />
-            <%= text_field_tag 'speak[tag_list]', @speak.tag_list, placeholder: "\uf02c comma separated " ,class:"tag-list fas" %>
-          </div>
-          <%= f.submit "edit", class:"speak-btn" %>
-        <% end %>
-      </div>
+  <div class="speak_container">
+    <div class="speak_title">
+      Let's edit your Voice!!!
     </div>
-    <div class="comments">
-      <h4>＜comments below＞</h4>
-      <% @comments.each do |comment| %>
-        <% if comment.response_comment.present? %>
-          <% next %>
-        <% end %>
-        <p><%= link_to comment.user.nickname, user_path(comment.user_id) %>:<%= comment.text %></p>
-        <div class="response_area">
-          <% comment.responses.order(:created_at).each do |response| %>
-            <p> <%= response.user.nickname %> : <%=response.text%></p>
-          <% end %>
+    <div class="voice_container">
+      <div class="voice_header">
+        CAST
+      </div>
+      <%= form_with model: @speak, url: speak_path(@speak.id), class:"speak-form" ,local: true do |f| %>
+        <%= f.text_field :subject, placeholder: "    \uf02d  subject", class:"speak-subject fa" %>
+        <%= f.text_area :voice, placeholder: "\uf028 cast voice", class:"speak-voice fas", rows: 4 %>
+        <div class="tag_list">
+        <%= f.label :tag_list, "Tags" %><br />
+          <%= text_field_tag 'speak[tag_list]', @speak.tag_list, placeholder: "\uf02c comma separated " ,class:"tag-list fas" %>
         </div>
-        <div class="response_box">
-          <%= form_for [@speak, @response_comments] do |f| %>
-            <%= f.hidden_field :response_comment, value: comment.id %>
-            <%= f.text_field :text %>
-            <%= f.submit "Reply"%>
-          <% end %>
-        </div>
+        <%= f.submit "edit", class:"speak-btn" %>
       <% end %>
-    </div>
-
-    <div>
-      <% if user_signed_in? %>
-        <%= form_with(model: [@speak, @comment],method: :post, local: true) do |f| %> 
-          <%= f.text_area :text, placeholder: "Response", rows: "3" %>
-          <%= f.submit "Response" %>
-        <% end %>
-      <% else %> 
-        <strong><p>You need to sign in if you want to comment!!!</p></strong>
-      <% end %> 
     </div>
   </div>
 </div>
