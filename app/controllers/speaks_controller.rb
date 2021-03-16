@@ -44,6 +44,12 @@ class SpeaksController < ApplicationController
     redirect_to(speaks_path)
   end
 
+  def destroy
+    speak = Speak.find(params[:id])
+    speak.destroy
+    redirect_to(speaks_path)
+  end
+
   private
 
   def speak_params
