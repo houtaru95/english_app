@@ -32,10 +32,9 @@
         </div>
         <div class="response_box">
           <%= form_for [@speak, @response_comments] do |f| %>
-            <%# <p>コメントに返信する</p> %>
             <%= f.hidden_field :response_comment, value: comment.id %>
             <%= f.text_field :text %>
-            <%= f.submit "返信する"%>
+            <%= f.submit "Reply"%>
           <% end %>
         </div>
       <% end %>
@@ -45,7 +44,7 @@
       <% if user_signed_in? %>
         <%= form_with(model: [@speak, @comment],method: :post, local: true) do |f| %> 
           <%= f.text_area :text, placeholder: "Response", rows: "3" %>
-          <%= f.submit "新規コメント" %>
+          <%= f.submit "Response" %>
         <% end %>
       <% else %> 
         <strong><p>You need to sign in if you want to comment!!!</p></strong>

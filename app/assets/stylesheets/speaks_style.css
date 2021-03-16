@@ -110,6 +110,7 @@
 }
 
 .footer_speak{
+  font-family:Georgia, 'Times New Roman', Times, serif ;
   background: linear-gradient(to bottom, rgb(243, 145, 161),rgb(247, 174, 186) 30%, rgb(241, 155, 210));
   font-size: 22px;
   bottom: 0 ;

@@ -1,11 +1,19 @@
+<%= render "shared/header_question" %>
+
 <h2>Your Favorite Questions</h2>
 
 <div class="favorite_questions">
   <% current_user.favorite_questions.each do |question| %>
     <div class="favorite_question">
+      <i class="fas fa-angle-right"></i>
       <%= link_to question_path(question), class:"favorite-question" do %>
         <%= question.title %>
+      <% end %>
+      <%= link_to user_path(question.user.id) do %>
+        by <%= question.user.nickname %>
       <% end %>
     </div>
   <% end %>
 </div>
+
+<%= render "shared/footer_question" %>
