@@ -18,8 +18,15 @@
       </div> 
     </div>
     <% if current_user.id == @speak.user.id %>
-      <div>
-        <%= link_to 'edit', edit_speak_path(@speak.id), method: :get %>
+      <div class="edit_speak">
+        <%= link_to edit_speak_path(@speak.id), class: "edit-speak" do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+      </div>
+      <div class="destroy_speak">
+        <%= link_to speak_path(@speak.id), method: :delete, class:"destroy-speak",data: {confirm: "Are you sure to delete?"} do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
       </div>
     <% end %>
 
@@ -45,14 +52,12 @@
       <% end %>
     </div>
 
-    <div>
+    <div >
       <% if user_signed_in? %>
         <%= form_with(model: [@speak, @comment],method: :post, local: true) do |f| %> 
           <%= f.text_area :text, placeholder: "Response", rows: "3" %>
           <%= f.submit "Response" %>
         <% end %>
-      <% else %> 
-        <strong><p>You need to sign in if you want to comment!!!</p></strong>
       <% end %> 
     </div>
   </div>
