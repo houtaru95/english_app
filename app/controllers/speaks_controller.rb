@@ -30,6 +30,19 @@ class SpeaksController < ApplicationController
     @response_comments = Comment.new   #特定のcommentに対するresponseをするために生成
   end
 
+  def edit
+    @speak = Speak.find(params[:id])
+    @comments = @speak.comments.includes(:user)
+    @comment = Comment.new
+    @response_comments = Comment.new   #特定のcommentに対するresponseをするために生成
+  end
+
+  def update
+    speak = Speak.find(params[:id])
+    speak.update(speak_params)
+    redirect_to(speaks_path)
+  end
+
   private
 
   def speak_params
