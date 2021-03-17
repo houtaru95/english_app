@@ -27,21 +27,18 @@ class SpeaksController < ApplicationController
   end
 
   def show
-    # @speak = Speak.find(params[:id])
     @comments = @speak.comments.includes(:user)
     @comment = Comment.new
     @response_comments = Comment.new   #特定のcommentに対するresponseをするために生成
   end
 
   def edit
-    # @speak = Speak.find(params[:id])
     @comments = @speak.comments.includes(:user)
     @comment = Comment.new
     @response_comments = Comment.new   #特定のcommentに対するresponseをするために生成
   end
 
   def update
-    # speak = Speak.find(params[:id])
     @speak.update(speak_params)
     if @speak.save
       redirect_to(speaks_path)
@@ -51,7 +48,6 @@ class SpeaksController < ApplicationController
   end
 
   def destroy
-    # @speak = Speak.find(params[:id])
     @speak.destroy
     redirect_to(speaks_path)
   end
