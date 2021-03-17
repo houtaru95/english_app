@@ -12,6 +12,14 @@
         <%= link_to question_path(question.id), class:"question-you-posted" do %>
           <%= question.title %>
         <% end %>
+        <% if current_user.id == question.user.id %>
+          <%= link_to edit_question_path(question.id), class:"edit-question" do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>

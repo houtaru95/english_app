@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_063403) do
+ActiveRecord::Schema.define(version: 2021_03_17_045833) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_answer", null: false
@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_063403) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "explanation", null: false
-    t.bigint "question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_details_on_question_id"
-  end
-
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "question_id"
@@ -59,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_063403) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "explanation"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -94,7 +87,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_063403) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
