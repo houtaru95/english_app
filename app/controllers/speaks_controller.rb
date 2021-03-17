@@ -20,7 +20,7 @@ class SpeaksController < ApplicationController
   def create
     @speak = Speak.new(speak_params)
     if @speak.save
-      redirect_to speaks_path
+      redirect_to(speaks_path)
     else
       render :new
     end

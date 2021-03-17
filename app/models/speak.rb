@@ -5,6 +5,9 @@ class Speak < ApplicationRecord
   belongs_to :user
   has_many :comments
   
-  validates :subject, presence: true
-  validates :voice, presence: true
+  validates :subject, presence: true, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+  validates :voice, presence: true, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+
 end
+
+
