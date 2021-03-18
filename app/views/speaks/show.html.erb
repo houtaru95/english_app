@@ -37,6 +37,13 @@
           <% next %>
         <% end %>
         <p><%= link_to comment.user.nickname, user_path(comment.user_id) %>:<%= comment.text %></p>
+        <% if current_user.id == comment.user.id %>
+          <div class="destroy_comment">
+            <%= link_to speak_comment_path(comment.speak.id, comment.id), method: :delete, class:"destroy-comment",data: {confirm: "Are you sure to delete?"} do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+        <% end %>
         <div class="response_area">
           <% comment.responses.order(:created_at).each do |response| %>
             <p> <%= response.user.nickname %> : <%=response.text%></p>
