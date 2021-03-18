@@ -18,6 +18,10 @@ body{
   margin-bottom: 20px;
 }
 
+.question_container{
+  overflow: scroll;
+}
+
 .question_new_header{
   font-size: 35px;
   margin-left: 20px;
@@ -254,6 +258,12 @@ h1{
   width: 30%;
   padding: 20px;
   margin-right: 0;
+}
+
+.fa-crown{
+  font-size: 18px;
+  color: gold;
+  margin-right: 5px;
 }
 
 .tags_index{

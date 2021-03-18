@@ -6,14 +6,14 @@ class Question < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-    validates :title
-    validates :content
-    validates :choice_1
-    validates :choice_2
-    validates :choice_3
-    validates :choice_4
+    validates :title, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :content, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :choice_1, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :choice_2, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :choice_3, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :choice_4, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
     validates :answer_num
-    validates :explanation
+    validates :explanation, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
   end
 
 end

@@ -5,8 +5,13 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to speak_path(@comment.speak.id)
     else
-      render root_path
+      redirect_to root_path
     end
+  end
+
+  def destroy
+    comment = Comment.find_by(id: params[:id], speak_id: params[:speak_id]).destroy
+    redirect_to speak_path
   end
 
   private

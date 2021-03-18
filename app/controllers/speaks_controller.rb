@@ -3,6 +3,7 @@ class SpeaksController < ApplicationController
   before_action :move_to_index, except: [:index]
   before_action :set_speak, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  
   def index
     if params[:tag]
       @speaks = Speak.tagged_with(params[:tag])

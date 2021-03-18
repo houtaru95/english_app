@@ -14,7 +14,7 @@
   </div>
   <div class="main_container">
     <div class="left_side_container">
-      <% @questions.each do |question|%>
+      <% @questions.order("updated_at DESC").each do |question|%>
         <div class="box">
           <i class="fas fa-angle-right"></i>
           <%= link_to question.title, question_path(question.id), class:"title" %>
@@ -59,7 +59,7 @@
     <div class="right_side_container">
       <% @popular_questions.each_with_index do |question, i|%>
         <div class="box">
-          <% if i == 0 %>
+          <% if i == 0 || question.favorites.count == @popular_questions.first.favorites.count %>
             <i class="fas fa-crown">  </i>
             <%= link_to question.title, question_path(question.id), class:"title" %>
             <% if current_user.already_favorited?(question) %>

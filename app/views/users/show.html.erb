@@ -9,6 +9,7 @@
   <div class="questions_you_posted">
     <% @questions.each do |question| %>
       <div class="question_you_posted">
+        <i class="fas fa-angle-right"></i>
         <%= link_to question_path(question.id), class:"question-you-posted" do %>
           <%= question.title %>
         <% end %>
