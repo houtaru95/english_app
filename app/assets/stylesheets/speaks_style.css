@@ -32,23 +32,29 @@
 
 .speak-subject{
   margin-top: 15px;
-  font-size: 18px;
+  font-size: 16px;
   width: 200px;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .speak-voice{
   margin-top: 16px;
   font-size: 18px;
   width: 80%;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .tag_list{
   margin-top: 10px;
+  text-align: left;
 }
 
 .tag-list{
-  font-size: 18px ;
+  font-size: 16px ;
   width: 100%;
+  border: solid 1px black;
 }
 
 .speak-btn{
@@ -59,7 +65,7 @@
   padding: 7px;
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 /* 以上、speak/views/new.html.erb */
@@ -83,28 +89,57 @@
 }
 
 .speaks_box_left{
-  width: 25%;
-  /* margin-right: 60px; */
-  border: solid 2px tomato;
+  width: 30%;
+}
+
+.speak-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.speaks-dictionary{
+  text-decoration: none;
+  color: black;
+}
+
+.speaks_dictionary{
+  margin-top: 30px;
 }
 
 .speaks_box_center{
-  /* margin: 20px; */
+  width: 35%;
   padding: 20px;
   overflow: scroll;
-  border: solid 2px blue;
+  background-color: lightseagreen;
 }
 
 .speak-box{
   text-decoration: none;
 }
 
+.cast_box{
+  display: flex;
+}
+
+.who_casted{
+  color: white;
+  display: flex;
+  margin-top: 20px;
+}
+
+.speak_and_tags{
+
+}
+
 .speak_box{
-  border: solid 1px black;
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   text-align: left;
-  /* width: fit-content; */
   color: black;
   padding: 10px;
   margin: 10px;
@@ -115,27 +150,38 @@
   text-align: left;
 }
 
-.speak_voice{
-  /* border: solid 1px lightseagreen; */
-}
-
-.speak-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: solid 2px black;
-}
-
 .speaks_box_right{
   width: 25%;
-  padding: 20px;
-  border: solid 2px coral;
+  padding: 5px 60px 5px 60px;
+  margin-right: 40px;
+  overflow: scroll;
+}
+
+
+.tags_index{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.tag_index{
+  font-size: 20px;
+  margin-bottom: 5px;
+  border: solid 1px black;
+  width: fit-content;
 }
 
 .tag-index{
-  margin-right: 40px;
+  background-color: rgb(153, 235, 238);
+  color: black;
+  text-decoration: none;
+  margin: 5px 10px 5px 20px;
+  border-radius: 15px;
 }
+
 
 .footer_speak{
   font-family:Georgia, 'Times New Roman', Times, serif ;

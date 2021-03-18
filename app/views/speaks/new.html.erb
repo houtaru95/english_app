@@ -2,7 +2,7 @@
 
 <div class="speak_container">
   <div class="speak_title">
-     Use ONLY English !!!
+     <p>Use ONLY English !!!</p>
   </div>
   <div class="voice_container">
     <div class="voice_header">
@@ -17,6 +17,12 @@
       </div>
       <%= f.submit "GO", class:"speak-btn" %>
     <% end %>
+    <div class="dictionary">
+      <%= link_to "https://ejje.weblio.jp/" do %>
+        <i class="fas fa-book-open"></i><br>
+      <p>dictionary</p>
+      <% end %>
+    </div>
   </div>
 </div>
 
