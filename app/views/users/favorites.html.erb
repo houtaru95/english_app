@@ -9,11 +9,26 @@
       <%= link_to question_path(question), class:"favorite-question" do %>
         <%= question.title %>
       <% end %>
+      <% if current_user.already_favorited?(question) %>
+        <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+          <i class="fas fa-heart"></i> 
+        <% end %> 
+      <% else %> 
+        <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+          <i class="far fa-heart"></i> 
+        <% end %> 
+      <% end %> 
+      <%= question.favorites.count %>
       <%= link_to user_path(question.user.id) do %>
         by <%= question.user.nickname %>
       <% end %>
     </div>
   <% end %>
 </div>
+
+<%= link_to "back to TimeLine", questions_path %><br>
+<%= link_to "back to #{current_user.nickname}'s MyPage", user_path(current_user.id) %>
+
+
 
 <%= render "shared/footer_question" %>

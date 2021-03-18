@@ -195,6 +195,7 @@ h1{
   width: 30%;
   margin-top: 20px;
   margin-left: 20px;
+  overflow: scroll;
 }
 
 .center_container{
@@ -258,6 +259,7 @@ h1{
   width: 30%;
   padding: 20px;
   margin-right: 0;
+  overflow: scroll;
 }
 
 .fa-crown{

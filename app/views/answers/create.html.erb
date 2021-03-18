@@ -6,12 +6,14 @@
   <p>GOOD JOB!!!</p>
   <p style="border-bottom: solid 1px tomato;">Explanation</p>
   <div style="border: solid 2px black;">
-    <%= @detail.explanation %>
+    <%= @question.explanation %>
   </div>
 <% else %>
   <p>TRY AGAIN!!!</p>
+  <%= link_to "Retry!!", question_path(@question.id) %><br>
 <% end %>
 
-<%= link_to "TOP PAGE", root_path %>
+<%= link_to "TOP PAGE", questions_path %>
+
 
 <%= render "shared/footer_question" %>

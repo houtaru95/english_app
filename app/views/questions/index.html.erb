@@ -14,7 +14,8 @@
   </div>
   <div class="main_container">
     <div class="left_side_container">
-      <% @questions.order("updated_at DESC").each do |question|%>
+    <%=Time.now.strftime("%b %d (%a)") %>
+      <% @questions.order("created_at DESC").each do |question|%>
         <div class="box">
           <i class="fas fa-angle-right"></i>
           <%= link_to question.title, question_path(question.id), class:"title" %>
@@ -31,6 +32,13 @@
           <% if current_user.id == question.user.id %>
             <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
               <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>
+          <%= link_to user_path(question.user.id) do %>
+            <% if Time.now.strftime("%Y %b %d") == question.created_at.strftime("%Y %b %d") %>
+              <p>by <%= question.user.nickname %> <%= question.created_at.strftime("%H:%M") %></p>
+            <% else %>
+              <p>by <%= question.user.nickname %> <%= question.created_at.strftime("%b %d %H:%M") %></p>
             <% end %>
           <% end %>
         </div>
@@ -77,6 +85,9 @@
                 <i class="fas fa-trash"></i>
               <% end %>
             <% end %>
+            <%= link_to user_path(question.user.id) do %>
+              <p>by <%= question.user.nickname %> <%= question.created_at.strftime("%b %d") %></p>
+            <% end %>
           <% else %>
             <i class="fas fa-angle-right"></i>
             <%= link_to question.title, question_path(question.id), class:"title" %>
@@ -94,6 +105,9 @@
               <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
                 <i class="fas fa-trash"></i>
               <% end %>
+            <% end %>
+            <%= link_to user_path(question.user.id) do %>
+              <p>by <%= question.user.nickname %> <%= question.created_at.strftime("%b %d") %></p>
             <% end %>
           <% end %>  
         </div>
