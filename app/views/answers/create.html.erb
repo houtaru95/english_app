@@ -1,19 +1,25 @@
 <%= render "shared/header_question" %>
 
-<h3>Thank you for your solving my question!!!</h3>
-
-<% if @answer.user_answer == @question.answer_num %>
-  <p>GOOD JOB!!!</p>
-  <p style="border-bottom: solid 1px tomato;">Explanation</p>
-  <div style="border: solid 2px black;">
-    <%= @question.explanation %>
-  </div>
-<% else %>
-  <p>TRY AGAIN!!!</p>
-  <%= link_to "Retry!!", question_path(@question.id) %><br>
-<% end %>
-
-<%= link_to "TOP PAGE", questions_path %>
-
+<div class="answer_container">
+  <% if @answer.user_answer == @question.answer_num %>
+    <h2 class="answer_header">You chose a correct answer !!!</h2>
+    <h3 class="answer_message">GOOD JOB!!!</h3>
+    <span class="answer_explanation">Explanation</span>
+    <div class="explanation_content">
+      <%= @question.explanation %>
+    </div>
+    <%= link_to questions_path, class:"top-page" do %>
+      <i class="fas fa-undo-alt"></i>
+      <p>Top Page</p>
+    <% end %>
+  <% else %>
+    <h2 class="answer_header">You chose a wrong answer...</h2>
+    <p class="retry_message">Try again!!!</p>
+    <%= link_to question_path(@question.id), class:"retry-message" do %>
+      <i class="fas fa-undo-alt"></i>
+      <p>Retry!!</p>
+    <% end %>
+  <% end %>
+</div>
 
 <%= render "shared/footer_question" %>

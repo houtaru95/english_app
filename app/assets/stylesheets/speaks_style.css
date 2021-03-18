@@ -27,32 +27,50 @@
   text-align: center;
   font-size: 30px;
   font-style: bold;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+}
+
+.voice_container .speak-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .speak-subject{
-  margin-top: 15px;
-  font-size: 16px;
-  width: 200px;
+  /* margin-top: 15px; */
+  padding: 5px;
+  font-size: 18px;
+  width: 20%;
   border: solid 1px black;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .speak-voice{
   margin-top: 16px;
+  padding: 5px;
   font-size: 18px;
-  width: 80%;
+  width: 40%;
   border: solid 1px black;
   border-radius: 10px;
 }
 
-.tag_list{
+.voice_container .tag_list{
   margin-top: 10px;
-  text-align: left;
+  width: 40%;
+  text-align: center;
 }
+
+.voice_container .dictionary{
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
 
 .tag-list{
   font-size: 16px ;
+  padding: 5px;
   width: 100%;
   border: solid 1px black;
 }
@@ -65,7 +83,7 @@
   padding: 7px;
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 /* 以上、speak/views/new.html.erb */
@@ -90,14 +108,31 @@
 
 .speaks_box_left{
   width: 30%;
+  margin-left: 20px;
 }
 
-.speak-form{
+.speaks_box_left .speak-form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin-top: 40px;
+}
+
+.speaks_box_left .speak-subject{
+width: 50%;
+}
+
+.speaks_box_left .speak-voice{
+  width: 100%;
+}
+
+.speaks_box_left .tag_list{
+  margin-top: 20px
+}
+
+.speaks_box_left .speak-btn{
+  margin-top: 20px;
 }
 
 .speaks-dictionary{
@@ -130,10 +165,6 @@
   margin-top: 20px;
 }
 
-.speak_and_tags{
-
-}
-
 .speak_box{
   background-color: white;
   border-radius: 10px;
@@ -149,6 +180,20 @@
   width: fit-content;
   text-align: left;
 }
+
+.tag_container .tag_list{
+  margin-top: 10px;
+  width: 40%;
+  display: flex;
+  text-align: left;
+}
+
+.tag_container .center-tag{
+  margin: 0px 8px 0px 5px;
+  padding: 2px;
+  font-size: 14px;
+}
+
 
 .speaks_box_right{
   width: 25%;
