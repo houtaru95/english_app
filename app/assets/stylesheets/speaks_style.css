@@ -249,6 +249,7 @@ width: 50%;
   justify-content: center;
   border: solid 2px white;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .comments_container .comment-nickname{
