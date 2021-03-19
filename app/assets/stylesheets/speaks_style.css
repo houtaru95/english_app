@@ -18,37 +18,54 @@
   margin-top: 40px;
 }
 
-.speak_container{
-  /* height: 75vh; */
-  /* overflow: scroll; */
-}
-
 .voice_header{
   text-align: center;
   font-size: 30px;
   font-style: bold;
-  margin-top: 20px;
+}
+
+.voice_container .speak-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .speak-subject{
-  margin-top: 15px;
+  padding: 5px;
   font-size: 18px;
-  width: 200px;
+  width: 20%;
+  border: solid 1px black;
+  border-radius: 5px;
 }
 
 .speak-voice{
   margin-top: 16px;
+  padding: 5px;
   font-size: 18px;
-  width: 80%;
+  width: 40%;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
-.tag_list{
+.voice_container .tag_list{
   margin-top: 10px;
+  width: 40%;
+  text-align: center;
 }
+
+.voice_container .dictionary{
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
 
 .tag-list{
-  font-size: 18px ;
+  font-size: 16px ;
+  padding: 5px;
   width: 100%;
+  border: solid 1px black;
 }
 
 .speak-btn{
@@ -59,11 +76,10 @@
   padding: 7px;
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* 以上、speak/views/new.html.erb */
-
 /* 以下、speak/views/index.html.erb */
 
 .speaks_under_header{
@@ -83,31 +99,74 @@
 }
 
 .speaks_box_left{
-  width: 25%;
-  /* margin-right: 60px; */
-  border: solid 2px tomato;
+  width: 30%;
+  margin-left: 20px;
+}
+
+.speaks_box_left .speak-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.speaks_box_left .speak-subject{
+width: 50%;
+}
+
+.speaks_box_left .speak-voice{
+  width: 100%;
+}
+
+.speaks_box_left .tag_list{
+  margin-top: 20px
+}
+
+.speaks_box_left .speak-btn{
+  margin-top: 20px;
+}
+
+.speaks-dictionary{
+  text-decoration: none;
+  color: black;
+}
+
+.speaks_dictionary{
+  margin-top: 30px;
 }
 
 .speaks_box_center{
-  /* margin: 20px; */
+  width: 35%;
   padding: 20px;
   overflow: scroll;
-  border: solid 2px blue;
+  background-color: lightseagreen;
 }
 
 .speak-box{
   text-decoration: none;
 }
 
+.cast_box{
+  display: flex;
+}
+
+.who_casted{
+  color: white;
+  display: flex;
+  margin-top: 20px;
+}
+
 .speak_box{
-  border: solid 1px black;
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   text-align: left;
-  /* width: fit-content; */
   color: black;
   padding: 10px;
   margin: 10px;
+  border-bottom: solid 2px white;
 }
 
 .speak_subject{
@@ -115,27 +174,130 @@
   text-align: left;
 }
 
-.speak_voice{
-  /* border: solid 1px lightseagreen; */
+.tag_container .tag_list{
+  margin-top: 10px;
+  width: 40%;
+  display: flex;
+  text-align: left;
 }
 
-.speak-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: solid 2px black;
+.tag_container .center-tag{
+  margin: 0px 8px 0px 5px;
+  padding: 2px;
+  font-size: 14px;
 }
+
 
 .speaks_box_right{
   width: 25%;
-  padding: 20px;
-  border: solid 2px coral;
+  padding: 5px 60px 5px 60px;
+  margin-right: 40px;
+  overflow: scroll;
+}
+
+
+.tags_index{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.tag_index{
+  font-size: 20px;
+  margin-bottom: 5px;
+  border: solid 1px black;
+  width: fit-content;
 }
 
 .tag-index{
-  margin-right: 40px;
+  background-color: rgb(153, 235, 238);
+  color: black;
+  text-decoration: none;
+  margin: 5px 10px 5px 20px;
+  border-radius: 15px;
 }
+
+/* 以下、speak/views/show.html.erb */
+.speak_show_wrap{
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.speak_show_wrap .cast_box{
+  font-size: 25px;
+}
+
+.speak_show_wrap .comments_container{
+  text-align: center;
+  padding: 30px;
+}
+
+.comments_container .comments{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.comments_container .comment_box{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+.comments_container .comment-nickname{
+  text-decoration: none;
+  color: white;
+}
+
+.destroy_comment .fa-trash{
+  color: tomato;
+  margin-left: 15px;
+}
+
+.comments_container .response-to-comment{
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
+
+.comments_container .reply-to-voice{
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.comments_container .response-btn{
+  background-color: white;
+  padding: 2px;
+  border-radius: 3px;
+  border: none;
+}
+
+.comments_container .reply-btn{
+  background-color: white;
+  padding: 2px;
+  border-radius: 3px;
+  border: none;
+}
+
+.comments_container .reply_box{
+  border-top: solid 3px white;
+  margin-top: 20px;
+}
+
+.comments_container .reply-to-voice{
+  margin-top: 20px;
+}
+
+/* 以上、speak/views/show.html.erb */
 
 .footer_speak{
   font-family:Georgia, 'Times New Roman', Times, serif ;

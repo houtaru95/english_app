@@ -1,0 +1,143 @@
+/* 以下、/views/users/favorites.html.erb */
+
+.user_favorites_container{
+  height: 70vh;
+}
+
+.user_favorites_container .favorite_header{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: solid 3px red;
+}
+
+.user_favorites_container .favorite_questions{
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+}
+
+
+.user_favorites_container .favorite_question{
+  font-size: 22px;
+  padding: 10px 100px 10px 100px;
+  margin-bottom: 10px;
+
+}
+
+.user_favorites_container .favorite_question_user{
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.user_favorites_container .favorite-question{
+  text-decoration: none;
+  color: black;
+}
+
+.user_favorites_container .to-mypage{
+  text-decoration: none;
+  color: tomato;
+}
+
+.user_favorites_container .to_mypage{
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* 以上、/views/users/favorites.html.erb */
+/* 以下、users/show */
+.my_page_container{
+  height: 75vh;
+}
+
+.my_page_container .my_page_nickname{
+  text-align: center;
+  font-size: 40px;
+}
+
+.total_favorites{
+  font-size: 30px;
+  color: red;
+}
+
+.my_page_container .own_favorite_questions{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.my_page_container .own-favorite-questions{
+  text-decoration: none;
+  padding: 10px;
+  color: orangered;
+  background-color: rgb(183, 213, 248);
+  border-radius: 5px;
+
+}
+
+.my_page_container .container_under_header{
+  text-align: center;
+}
+
+.voices_and_quesitons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: solid 2px red ;
+}
+
+.my_page_contents{
+  display: flex;
+  justify-content: space-around;
+}
+
+.voices_you_casted{
+  width: 30%;
+  margin-top: 25px;
+  overflow: scroll;
+}
+
+.voice_you_casted{
+  border: solid 3px lightseagreen;
+  border-radius: 10px;
+  padding: 10px 10px 0px 10px;
+  margin-bottom: 15px;
+}
+
+.voice-you-casted{
+  text-decoration: none;
+  color: black;
+}
+
+.voice_you_casted .created_at{
+  text-align: right;
+}
+
+
+.questions_you_posted{
+  width: 30%;
+  margin-top: 25px;
+  overflow: scroll;
+}
+
+.question_you_posted{
+  border: solid 3px pink;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.questions_you_posted .question-you-posted{
+  text-decoration: none;
+  color: black;
+}
+
+.questions_you_posted .edit-question{
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.questions_you_posted .created_at{
+  margin-left: 50px;
+}
+/* 以上、users/show */

@@ -50,9 +50,6 @@ h1{
   margin-right: 20px;
 }
 
-.box{
-  margin: 0px 5px 8px 1px;
-}
 
 .tag_box .tag_list{
   text-align: center;
@@ -105,12 +102,12 @@ h1{
 .header_right_down{
   display: flex;
   justify-content: right;
-  margin: 60px 15px 0 0;
+  margin: 65px 15px 0 0;
   text-align: right;
 }
 
 .nickname{
-  margin: 10px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
   font-size: 25px;
   text-align: right;
 }
@@ -121,7 +118,7 @@ h1{
 }
 
 .log_out{
-  margin: 10px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
   font-size: 23px;
   text-align: right;
 }
@@ -165,6 +162,7 @@ h1{
 
 .Time_Line{
   width: 20%;
+  margin-left: 60px;
 }
 
 .Search_Words{
@@ -173,14 +171,15 @@ h1{
 }
 
 .Tags_List{
-  margin-right: 40px;
+  margin-right: 80px;
   width: 20%;
 }
 
-/* .Time-Line,
-.Search-Words,
-.Tags-List{
-} */
+.box{
+  border-radius: 10px;
+  margin: 0px 5px 8px 1px;
+  background-color: white;
+}
 
 .main_container{
   height: 80vh;
@@ -188,13 +187,35 @@ h1{
   width: 100%;
   display: flex;
   justify-content: space-between;
-
 }
 
 .left_side_container{
   width: 30%;
-  margin-top: 20px;
+  padding: 20px;
   margin-left: 20px;
+  overflow: scroll;
+  background-color: tomato;
+}
+
+.time_now{
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+
+.fa-angle-right{
+  margin-left: 5px;
+}
+
+.posted-by{
+  text-decoration: none;
+  color: black;
+}
+
+.down_box{
+  text-align: right;
+  justify-content: right;
+  margin-right: 20px;
 }
 
 .center_container{
@@ -202,7 +223,7 @@ h1{
   width: 40%;
   display: flex;
   flex-direction: column;
-  margin: 120px 50px 0px 50px;
+  margin: 180px 20px 0px 20px;
 }
 
 .post_btn_container{
@@ -235,7 +256,7 @@ h1{
 
 .search_input .fa{
   height: 25px;
-  width: 60%;
+  width: 70%;
   margin-top: 20px;
   margin-left: 10px;
   text-align: center;
@@ -257,39 +278,18 @@ h1{
 .right_side_container{
   width: 30%;
   padding: 20px;
-  margin-right: 0;
+  margin-right: 20px;
+  overflow: scroll;
+  background-color: tomato;
 }
 
 .fa-crown{
   font-size: 18px;
   color: gold;
+  margin-left: 5px;
   margin-right: 5px;
 }
 
-.tags_index{
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 5px;
-}
-
-.tag_index{
-  font-size: 20px;
-  margin-bottom: 5px;
-  border: solid 1px black;
-  width: fit-content;
-}
-
-.tag-index{
-  background-color: lightgreen;
-  color: black;
-  text-decoration: none;
-  margin-left: 60px;
-  border: solid 1px black;
-
-}
 
 .container .box{
   margin-top: 20px;
@@ -308,14 +308,12 @@ h1{
 }
 
 .sign_up_container{
-  /* height: 75vh; */
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
 .sign_up_header{
-  /* margin-top: 70px; */
   padding: 5px;
 }
 
@@ -342,7 +340,7 @@ h1{
 }
 
 .sign_in_container{
-  height: 75vh;
+  height: 70vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -371,38 +369,73 @@ h1{
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
 
+/* 以下、questions/new */
+
 .question_container{
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
 .question_input{
-  padding: 5px;
+  padding: 30px;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.question_choices_explanation{
+  display: flex;
+  justify-content: center;
 }
 
 .question_title,
 .question_content,
 .question_choice,
-.answer_num,
-.tag_list{
-  margin-bottom: 20px;
+.answer_num{
+  margin-bottom: 25px;
+}
+
+.question_title,
+.question_content,
+.question_explanation{
+  text-align: center;
+}
+
+.question-title{
+  width: 40%;
+  border: solid 2px lightcoral;
+}
+
+.question-content{
+  width: 100%;
+  border: solid 2px lightcoral;
+}
+
+.question-choice,
+.answer-num,
+.question-explanation{
+  width: 500px;
+  border: solid 2px lightcoral;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.question-explanation{
+  margin: 0px 8px 12px 15px;
+}
+
+.fa-book-open{
+  color: black;
+}
+
+.question_explanation .dictionary{
+  text-decoration: none;
+  color: black;
 }
 
 .question_submit{
   text-align: center;
-}
-
-.question-title,
-.question-content,
-.question-choice,
-.tag-list,
-.answer-num{
-  width: 400px;
-  border: solid 1.8px lightcoral;
-  border-radius: 4px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .submit-btn{
@@ -413,6 +446,9 @@ h1{
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 }
+
+/* 以上、questions/new */
+/* 以下、questions/show */
 
 .question_wrap{
   height: 80vh;
@@ -440,19 +476,36 @@ h1{
   display: flex;
 }
 
-.favorite_question{
-  margin: 10px;
-  font-size: 20px;
+/* 以上、questions/show */
+/* 以下、questions/search */
+
+.search_wrap{
+  height: 70vh;
+  overflow: scroll;
 }
 
-.favorite-question{
-  text-decoration: none;
-  color: black;
+.search_results{
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: solid 2px black;
 }
 
-.my_page{
-  height: 75vh;
+.search_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.search_container .center_container{
+  text-align: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 100px 20px 0px 20px;
+}
+
+/* ↑以上、questions/search */
+/* ↓以下、questions/_footer */
 
 .footer_question{
   font-family:Georgia, 'Times New Roman', Times, serif ;
@@ -465,4 +518,6 @@ h1{
   justify-content:space-around;
   align-items:center;
 }
+
+/* ↑以上、questions/_footer */
 

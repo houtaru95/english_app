@@ -1,22 +1,26 @@
 <%= render "shared/header_speak" %>
 
-<div class="speak_show_container">
-  <div class="speak_container">
-    <div class="speak_title">
-      Let's edit your Voice!!!
+<div class="speak_container">
+  <div class="speak_title">
+     <p>Let's Edit your Voice!!!</p>
+  </div>
+  <div class="voice_container">
+    <div class="voice_header">
+      CAST
     </div>
-    <div class="voice_container">
-      <div class="voice_header">
-        CAST
+    <%= form_with model: @speak, url: speak_path(@speak.id), class:"speak-form" ,local: true do |f| %>
+      <%= f.text_field :subject, placeholder: " \uf02d  subject", class:"speak-subject fa" %>
+      <%= f.text_area :voice, placeholder: "\uf028 cast voice", class:"speak-voice fas", rows: 4 %>
+      <div class="tag_list">
+      <%= f.label :tag_list, "Tags" %><br>
+        <%= text_field_tag 'speak[tag_list]', @speak.tag_list, placeholder: "\uf02c comma separated " ,class:"tag-list fas" %>
       </div>
-      <%= form_with model: @speak, url: speak_path(@speak.id), class:"speak-form" ,local: true do |f| %>
-        <%= f.text_field :subject, placeholder: "    \uf02d  subject", class:"speak-subject fa" %>
-        <%= f.text_area :voice, placeholder: "\uf028 cast voice", class:"speak-voice fas", rows: 4 %>
-        <div class="tag_list">
-        <%= f.label :tag_list, "Tags" %><br />
-          <%= text_field_tag 'speak[tag_list]', @speak.tag_list, placeholder: "\uf02c comma separated " ,class:"tag-list fas" %>
-        </div>
-        <%= f.submit "edit", class:"speak-btn" %>
+      <%= f.submit "GO", class:"speak-btn" %>
+    <% end %>
+    <div class="dictionary">
+      <%= link_to "https://ejje.weblio.jp/", class:"dictionary" do %>
+        <i class="fas fa-book-open"></i><br>
+      <p>dictionary</p>
       <% end %>
     </div>
   </div>

@@ -1,45 +1,70 @@
 <%= render "shared/header_question" %>
 
-<h2 style="color: red;" class="time_line">
-  TimeLine
-</h2>
-
-<div class="container">
-  <div class="left_side_container">
-    <% @questions.each do |question|%>
-      <div class="box">
-        <i class="fas fa-angle-right"></i>
-        <%= link_to question.title, question_path(question.id), class:"title" %>
-          <% if current_user.already_favorited?(question) %>
-            <%= link_to question_favorites_path(question), method: :delete, class:"fav_heart" do %> 
-              <i class="fas fa-heart"></i> 
-            <% end %> 
-          <% else %> 
-            <%= link_to question_favorites_path(question), method: :post, class:"fav_heart" do %> 
-              <i class="far fa-heart"></i> 
-            <% end %> 
-          <% end %> 
-        <%= question.favorites.count %>
-        <%= link_to question_path(question.id) , method: :delete, class:"delete" do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <div class="center_container">
-    <div class="search_form">
-      <%= form_with(url: search_questions_path , local: true, method: :get, class: "search-form") do |f| %>
-        <div class="search_input">
-          <%= f.text_field :keyword, placeholder: "Let's Search Questions!!", class: "search-input" %>
-        </div>
-        <div class="search_btn"> 
-          <%= f.submit "GO", class: "search-btn" %>
+<div class="search_wrap">
+  <h2 style="color: red;" class="search_results">
+    Search Results
+  </h2>
+  <div class="search_container">
+    <div class="left_side_container">
+      <% @questions.each do |question|%>
+        <div class="box">
+          <div class="upper_box">
+            <i class="fas fa-angle-right"></i>
+            <%= link_to question.title, question_path(question.id), class:"title" %>
+              <% if current_user.already_favorited?(question) %>
+                <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                  <i class="fas fa-heart"></i> 
+                <% end %> 
+              <% else %> 
+                <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                  <i class="far fa-heart"></i> 
+                <% end %> 
+              <% end %> 
+            <%= question.favorites.count %>
+            <% if current_user.id == question.user.id %>
+              <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="down_box">
+            <div class="posted_by">
+              <%= link_to user_path(question.user.id), class:"posted-by" do %>
+                by <%= question.user.nickname %>
+              <% end %> 
+            </div>
+            <div class="created_at">
+              <% if Time.now.strftime("%Y %b %d") == question.created_at.strftime("%Y %b %d") %>
+                <%= question.created_at.strftime("%H:%M") %>
+              <% else %>
+                <%= question.created_at.strftime("%d %b [%H:%M]") %>
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
-  </div>
-  <div class="right_side_container">
+    <div class="center_container">
+      <%= link_to new_question_path, class: "post-btn" do %>
+        <button class="post_btn">
+          <i class="fas fa-angle-up"></i>
+          <p>POST</p>
+        </button>
+      <% end %>
+      <div class="search_form">
+        <%= form_with(url: search_questions_path , local: true, method: :get, class: "search-form") do |f| %>
+          <div class="search_input">
+            <%= f.text_field :keyword, placeholder: "\uf002  Let's Search for Questions!!", class: 'fa' %>
+          </div>
+          <div class="search_btn"> 
+            <%= f.submit "GO", class: "search-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
 <%= render "shared/footer_question" %>
+
+

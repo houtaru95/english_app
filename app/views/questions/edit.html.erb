@@ -11,48 +11,51 @@
           <%= f.label :title, "Title" %><br />
           <%= f.text_field :title, autocomplete: "title", class:"question-title" %>
       </div>
-
       <div class="question_content">
           <%= f.label :content, "Question" %><br />
           <%= f.text_area :content, autocomplete: "content",rows:2, class:"question-content" %>
       </div>
-
-      <div class="question_choice">
-        <%= f.label :choice_1, "No.1" %><br />
-        <%= f.text_field :choice_1, autocomplete: "off", class:"question-choice" %>
+      <div class="question_choices_explanation">
+        <div class="question_choices">
+          <div class="question_choice">
+            <%= f.label :choice_1, "No.1" %><br />
+            <%= f.text_field :choice_1, autocomplete: "off", class:"question-choice" %>
+          </div>
+          <div class="question_choice">
+            <%= f.label :choice_2, "No.2" %><br />
+            <%= f.text_field :choice_2, autocomplete: "off", class:"question-choice" %>
+          </div>
+          <div class="question_choice">
+            <%= f.label :choice_3, "No.3" %><br />
+            <%= f.text_field :choice_3, autocomplete: "off", class:"question-choice" %>
+          </div>
+          <div class="question_choice">
+            <%= f.label :choice_4, "No.4" %><br />
+            <%= f.text_field :choice_4, autocomplete: "off", class:"question-choice" %>
+          </div>
+          <div class="answer_num">
+            <%= f.label :answer_num, "Answer Number" %><br />
+            <%= f.text_field :answer_num, autocomplete: "answer_num", class:"answer-num" %>
+          </div>
+        </div>
+        <div class="question_explanation">
+          <%= f.label :explanation, "Explanation" %><br />
+          <%= f.text_area :explanation, autocomplete: "explanation",rows:12, class:"question-explanation" %>
+          <div class="dictionary">
+            <%= link_to "https://ejje.weblio.jp/", class:"dictionary" do %>
+              <i class="fas fa-book-open"></i><br>
+              <p>dictionary</p>
+            <% end %>
+          </div>
+        </div>
       </div>
-      
-      <div class="question_choice">
-        <%= f.label :choice_2, "No.2" %><br />
-        <%= f.text_field :choice_2, autocomplete: "off", class:"question-choice" %>
-      </div>
-
-      <div class="question_choice">
-        <%= f.label :choice_3, "No.3" %><br />
-        <%= f.text_field :choice_3, autocomplete: "off", class:"question-choice" %>
-      </div>
-
-      <div class="question_choice">
-        <%= f.label :choice_4, "No.4" %><br />
-        <%= f.text_field :choice_4, autocomplete: "off", class:"question-choice" %>
-      </div>
-
-      <div class="answer_num">
-        <%= f.label :answer_num, "Answer Number" %><br />
-        <%= f.text_field :answer_num, autocomplete: "answer_num", class:"answer-num" %>
-      </div>
-
-      <div class="question_explanation">
-        <%= f.label :explanation, "Explanation" %><br />
-        <%= f.text_area :explanation, autocomplete: "explanation",rows:3, class:"question-explanation" %>
-      </div>
-
       <div class="question_submit">
-        <%= f.submit "Edit", class:"submit-btn" %>
+        <%= f.submit "GO", class:"submit-btn" %>
       </div>
     <% end %>
   </div>
 </div>
+
 
 <%= render "shared/footer_question" %>
 

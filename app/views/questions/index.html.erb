@@ -14,37 +14,54 @@
   </div>
   <div class="main_container">
     <div class="left_side_container">
-      <% @questions.order("updated_at DESC").each do |question|%>
+      <div class="time_now">
+        <%=Time.now.strftime("%d %b (%a)") %>
+      </div>
+      <% @questions.order("created_at DESC").each do |question|%>
         <div class="box">
-          <i class="fas fa-angle-right"></i>
-          <%= link_to question.title, question_path(question.id), class:"title" %>
-            <% if current_user.already_favorited?(question) %>
-              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
-                <i class="fas fa-heart"></i> 
+          <div class="upper_box">
+            <i class="fas fa-angle-right"></i>
+            <%= link_to question.title, question_path(question.id), class:"title" %>
+              <% if current_user.already_favorited?(question) %>
+                <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                  <i class="fas fa-heart"></i> 
+                <% end %> 
+              <% else %> 
+                <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                  <i class="far fa-heart"></i> 
+                <% end %> 
               <% end %> 
-            <% else %> 
-              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
-                <i class="far fa-heart"></i> 
-              <% end %> 
-            <% end %> 
-          <%= question.favorites.count %>
-          <% if current_user.id == question.user.id %>
-            <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
-              <i class="fas fa-trash"></i>
+            <%= question.favorites.count %>
+            <% if current_user.id == question.user.id %>
+              <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+          <div class="down_box">
+            <div class="posted_by">
+              <%= link_to user_path(question.user.id), class:"posted-by" do %>
+                by <%= question.user.nickname %>
+              <% end %> 
+            </div>
+            <div class="created_at">
+              <% if Time.now.strftime("%Y %b %d") == question.created_at.strftime("%Y %b %d") %>
+                <%= question.created_at.strftime("%H:%M") %>
+              <% else %>
+                <%= question.created_at.strftime("%d %b [%H:%M]") %>
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
     <div class="center_container">
-      <%# <div class="post_btn_container"> %>
         <%= link_to new_question_path, class: "post-btn" do %>
           <button class="post_btn">
             <i class="fas fa-angle-up"></i>
             <p>POST</p>
           </button>
         <% end %>
-      <%# </div> %>
       <div class="search_form">
         <%= form_with(url: search_questions_path , local: true, method: :get, class: "search-form") do |f| %>
           <div class="search_input">
@@ -60,41 +77,65 @@
       <% @popular_questions.each_with_index do |question, i|%>
         <div class="box">
           <% if i == 0 || question.favorites.count == @popular_questions.first.favorites.count %>
-            <i class="fas fa-crown">  </i>
-            <%= link_to question.title, question_path(question.id), class:"title" %>
-            <% if current_user.already_favorited?(question) %>
-              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
-                <i class="fas fa-heart"></i> 
-              <% end %> 
-            <% else %> 
-              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
-                <i class="far fa-heart"></i> 
-              <% end %> 
-            <% end %>
-            <%= question.favorites.count %>
-            <% if current_user.id == question.id %>
-              <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
-                <i class="fas fa-trash"></i>
+            <div class="populars_first">
+              <i class="fas fa-crown">  </i>
+              <%= link_to question.title, question_path(question.id), class:"title" %>
+              <% if current_user.already_favorited?(question) %>
+                <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                  <i class="fas fa-heart"></i> 
+                <% end %> 
+              <% else %> 
+                <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                  <i class="far fa-heart"></i> 
+                <% end %> 
               <% end %>
-            <% end %>
+              <%= question.favorites.count %>
+              <% if current_user.id == question.id %>
+                <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              <% end %>
+              <div class="down_box">
+                <div class="posted_by">
+                  <%= link_to user_path(question.user.id), class:"posted-by" do %>
+                    by <%= question.user.nickname %>
+                  <% end %>
+                </div>
+                <div class="created_at">
+                  <%= question.created_at.strftime("%d %b") %>
+                </div>
+              </div> 
+            </div>
           <% else %>
-            <i class="fas fa-angle-right"></i>
-            <%= link_to question.title, question_path(question.id), class:"title" %>
-            <% if current_user.already_favorited?(question) %>
-              <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
-                <i class="fas fa-heart"></i> 
+            <div class="populars">
+              <i class="fas fa-angle-right"></i>
+              <%= link_to question.title, question_path(question.id), class:"title" %>
+              <% if current_user.already_favorited?(question) %>
+                <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+                  <i class="fas fa-heart"></i> 
+                <% end %> 
+              <% else %> 
+                <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+                  <i class="far fa-heart"></i> 
+                <% end %> 
               <% end %> 
-            <% else %> 
-              <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
-                <i class="far fa-heart"></i> 
-              <% end %> 
-            <% end %> 
-            <%= question.favorites.count %>
-            <% if current_user.id == question.user.id %>
-              <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
-                <i class="fas fa-trash"></i>
+              <%= question.favorites.count %>
+              <% if current_user.id == question.user.id %>
+                <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
               <% end %>
-            <% end %>
+              <div class="down_box">
+                <div class="posted_by">
+                  <%= link_to user_path(question.user.id), class:"posted-by" do %>
+                    by <%= question.user.nickname %>
+                  <% end %>
+                </div>
+                <div class="created_at">
+                  <%= question.created_at.strftime("%d %b") %>
+                </div>
+              </div>
+            </div>
           <% end %>  
         </div>
       <% end %>

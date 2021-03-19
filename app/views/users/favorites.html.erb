@@ -1,19 +1,39 @@
 <%= render "shared/header_question" %>
 
-<h2>Your Favorite Questions</h2>
-
-<div class="favorite_questions">
-  <% current_user.favorite_questions.each do |question| %>
-    <div class="favorite_question">
-      <i class="fas fa-angle-right"></i>
-      <%= link_to question_path(question), class:"favorite-question" do %>
-        <%= question.title %>
-      <% end %>
-      <%= link_to user_path(question.user.id) do %>
-        by <%= question.user.nickname %>
+<div class="user_favorites_container">
+  <h2 class="favorite_header">Your Favorite Questions</h2>
+  <div class="favorite_questions">
+    <div class="favorite_box">
+      <% current_user.favorite_questions.each do |question| %>
+        <div class="favorite_question">
+          <i class="fas fa-angle-right"></i>
+          <%= link_to question_path(question), class:"favorite-question" do %>
+            <%= question.title %>
+          <% end %>
+          <% if current_user.already_favorited?(question) %>
+            <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+              <i class="fas fa-heart"></i> 
+            <% end %> 
+          <% else %> 
+            <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+              <i class="far fa-heart"></i> 
+            <% end %> 
+          <% end %> 
+          <%= question.favorites.count %>
+          <%= link_to user_path(question.user.id), class:"favorite_question_user" do %>
+            by <%= question.user.nickname %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
+  </div>
+  <div class="to_mypage">
+    <%= link_to user_path(current_user.id), class:"to-mypage" do %>
+      <i class="fas fa-undo-alt"></i>
+      <span>back to <%= current_user.nickname %>'s Page</span>  
+    <% end %>
+  </div>
 </div>
+
 
 <%= render "shared/footer_question" %>
