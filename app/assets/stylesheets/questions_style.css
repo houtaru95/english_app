@@ -448,7 +448,6 @@ h1{
 }
 
 /* 以上、questions/new */
-
 /* 以下、questions/show */
 
 .question_wrap{
@@ -478,28 +477,11 @@ h1{
 }
 
 /* 以上、questions/show */
-/* 以下、users/show */
-
-.my_page{
-  height: 75vh;
-}
-
-/* .favorite_question{
-  margin: 10px;
-  font-size: 20px;
-} */
-
-/* .favorite-question{
-  text-decoration: none;
-  color: black;
-} */
-
-
-/* 以上、users/show */
 /* 以下、questions/search */
 
 .search_wrap{
   height: 70vh;
+  overflow: scroll;
 }
 
 .search_results{

@@ -1,59 +1,62 @@
 <%= render "shared/header_speak" %>
 
-<div class="my_page">
-  <h1><%= @user.nickname %>s'</h1>
-  <p><%= @user.nickname %> has got totally <%= @favorites_count %> favs for now!!!!</p>
+<div class="my_page_container">
+  <div class="my_page_nickname"><%= @user.nickname %></div>
+  <p class="container_under_header">has got totally <span class="total_favorites"><%= @favorites_count %></span> favs for now!!!!</p>
   <% if current_user.id == @user.id %>
     <div class="own_favorite_questions">
-      <%= link_to "Favorite Questions", favorites_users_path%>
+      <%= link_to favorites_users_path, class:"own-favorite-questions" do %>
+        <i class="far fa-hand-point-right"></i>
+        <span>Favorite Questions</span>
+      <% end %>
     </div>
   <% end %>
-  <div class="questions_you_posted">
-    <% @questions.each do |question| %>
-      <div class="question_you_posted">
-        <i class="fas fa-angle-right"></i>
-        <%= link_to question_path(question.id), class:"question-you-posted" do %>
-          <%= question.title %>
-        <% end %>
-        <% if current_user.already_favorited?(question) %>
-          <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
-            <i class="fas fa-heart"></i> 
-          <% end %> 
-        <% else %> 
-          <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
-            <i class="far fa-heart"></i> 
-          <% end %> 
-        <% end %> 
-        <%= question.favorites.count %>
-        <% if current_user.id == question.user.id %>
-          <%= link_to edit_question_path(question.id), class:"edit-question" do %>
-            <i class="far fa-edit"></i>
-          <% end %>
-          <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        <% end %>
-        <%= link_to user_path(question.user.id) do %>
-          <p>by <%= question.user.nickname %></p>
-        <% end %>
-      </div>
-    <% end %>
+  <div class="voices_and_quesitons">
+    <h3 class="my_page_voices">Voices</h3>
+    <h3 class="my_page_questions">Questions</h3>
   </div>
-  <div class="voices_you_casted">
-    <% @speaks.order("created_at DESC").each do |speak| %>
-      <div class="voice_you_casted">
-        <%= link_to speak_path(speak.id) do %>
-          <p><%= speak.subject %></p>
-          <div>
-            <%= speak.voice %>
-          </div>
-          <p><%= speak.created_at.strftime("%b %d %H:%M") %></p>
-        <% end %>
-      </div>
-    <% end %>
-  <div>
+  <div class="my_page_contents">
+    <div class="voices_you_casted">
+      <% @speaks.order("created_at DESC").each do |speak| %>
+        <div class="voice_you_casted">
+          <%= link_to speak_path(speak.id), class:"voice-you-casted" do %>
+            <span class="subject">【 <%= speak.subject %> 】</span>
+            <div class="voice"><%= speak.voice %></div>
+            <p class="created_at"><%= speak.created_at.strftime("%b %d %H:%M") %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="questions_you_posted">
+      <% @questions.each do |question| %>
+        <div class="question_you_posted">
+          <i class="fas fa-angle-right"></i>
+          <%= link_to question_path(question.id), class:"question-you-posted" do %>
+            <%= question.title %>
+          <% end %>
+          <% if current_user.already_favorited?(question) %>
+            <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
+              <i class="fas fa-heart"></i> 
+            <% end %> 
+          <% else %> 
+            <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
+              <i class="far fa-heart"></i> 
+            <% end %> 
+          <% end %> 
+          <%= question.favorites.count %>
+          <% if current_user.id == question.user.id %>
+            <%= link_to edit_question_path(question.id), class:"edit-question" do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to question_path(question.id) , method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>
+          <span class="created_at"><%= question.created_at.strftime("%d %b [%H:%M]") %></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "back to TimeLine", questions_path %>
 
 <%= render "shared/footer_speak" %>
