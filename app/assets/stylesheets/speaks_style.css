@@ -27,7 +27,6 @@
   text-align: center;
   font-size: 30px;
   font-style: bold;
-  /* margin-top: 20px; */
 }
 
 .voice_container .speak-form{
@@ -38,7 +37,6 @@
 }
 
 .speak-subject{
-  /* margin-top: 15px; */
   padding: 5px;
   font-size: 18px;
   width: 20%;
@@ -174,6 +172,7 @@ width: 50%;
   color: black;
   padding: 10px;
   margin: 10px;
+  border-bottom: solid 2px white;
 }
 
 .speak_subject{
@@ -226,6 +225,93 @@ width: 50%;
   margin: 5px 10px 5px 20px;
   border-radius: 15px;
 }
+
+/* 以下、speak/views/show.html.erb */
+.speak_show_wrap{
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.speak_show_wrap .cast_box{
+  font-size: 25px;
+}
+
+.speak_show_wrap .comments_container{
+  text-align: center;
+  padding: 30px;
+}
+
+.comments_container .comments{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.comments_container .comment_box{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+.comments_container .comment-nickname{
+  text-decoration: none;
+  color: white;
+}
+
+.destroy_comment .fa-trash{
+  color: tomato;
+  margin-left: 15px;
+}
+
+.comments_container .response_area{
+  /* border: solid 2px green; */
+
+}
+
+.comments_container .response-to-comment{
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
+
+.comments_container .reply-to-voice{
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.comments_container .response-btn{
+  background-color: white;
+  padding: 2px;
+  border-radius: 3px;
+  border: none;
+}
+
+.comments_container .reply-btn{
+  background-color: white;
+  padding: 2px;
+  border-radius: 3px;
+  border: none;
+}
+
+.comments_container .reply_box{
+  border-top: solid 3px white;
+  margin-top: 20px;
+}
+
+.comments_container .reply-to-voice{
+  margin-top: 20px;
+}
+
+
+
+
+/* 以上、speak/views/show.html.erb */
 
 
 .footer_speak{

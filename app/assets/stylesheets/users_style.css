@@ -1,0 +1,59 @@
+/* 以下、/views/users/favorites.html.erb */
+
+.user_favorites_container{
+  height: 70vh;
+}
+
+.user_favorites_container .favorite_header{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: solid 3px red;
+}
+
+.user_favorites_container .favorite_questions{
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+}
+
+
+.user_favorites_container .favorite_question{
+  font-size: 22px;
+  padding: 10px 100px 10px 100px;
+  margin-bottom: 10px;
+
+}
+
+.user_favorites_container .favorite_question_user{
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.user_favorites_container .favorite-question{
+  text-decoration: none;
+  color: black;
+}
+
+.user_favorites_container .to-mypage{
+  text-decoration: none;
+  color: tomato;
+}
+
+.user_favorites_container .to_mypage{
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* 以上、/views/users/favorites.html.erb */
+/* 以下、users/show */
+.my_page{
+  height: 75vh;
+}
+
+
+
+
+
+
+
+/* 以上、users/show */

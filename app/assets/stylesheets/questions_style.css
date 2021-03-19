@@ -102,12 +102,12 @@ h1{
 .header_right_down{
   display: flex;
   justify-content: right;
-  margin: 60px 15px 0 0;
+  margin: 65px 15px 0 0;
   text-align: right;
 }
 
 .nickname{
-  margin: 10px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
   font-size: 25px;
   text-align: right;
 }
@@ -118,7 +118,7 @@ h1{
 }
 
 .log_out{
-  margin: 10px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
   font-size: 23px;
   text-align: right;
 }
@@ -256,7 +256,7 @@ h1{
 
 .search_input .fa{
   height: 25px;
-  width: 60%;
+  width: 70%;
   margin-top: 20px;
   margin-left: 10px;
   text-align: center;
@@ -340,7 +340,7 @@ h1{
 }
 
 .sign_in_container{
-  height: 75vh;
+  height: 70vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -372,7 +372,7 @@ h1{
 /* 以下、questions/new */
 
 .question_container{
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -381,6 +381,7 @@ h1{
 .question_input{
   padding: 30px;
   border: solid 2px black;
+  border-radius: 10px;
 }
 
 .question_choices_explanation{
@@ -448,7 +449,7 @@ h1{
 
 /* 以上、questions/new */
 
-/* 以下、questions/ */
+/* 以下、questions/show */
 
 .question_wrap{
   height: 80vh;
@@ -476,19 +477,53 @@ h1{
   display: flex;
 }
 
-.favorite_question{
-  margin: 10px;
-  font-size: 20px;
-}
-
-.favorite-question{
-  text-decoration: none;
-  color: black;
-}
+/* 以上、questions/show */
+/* 以下、users/show */
 
 .my_page{
   height: 75vh;
 }
+
+/* .favorite_question{
+  margin: 10px;
+  font-size: 20px;
+} */
+
+/* .favorite-question{
+  text-decoration: none;
+  color: black;
+} */
+
+
+/* 以上、users/show */
+/* 以下、questions/search */
+
+.search_wrap{
+  height: 70vh;
+}
+
+.search_results{
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: solid 2px black;
+}
+
+.search_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_container .center_container{
+  text-align: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 100px 20px 0px 20px;
+}
+
+/* ↑以上、questions/search */
+/* ↓以下、questions/_footer */
 
 .footer_question{
   font-family:Georgia, 'Times New Roman', Times, serif ;
@@ -501,4 +536,6 @@ h1{
   justify-content:space-around;
   align-items:center;
 }
+
+/* ↑以上、questions/_footer */
 

@@ -52,7 +52,6 @@ class QuestionsController < ApplicationController
       @questions += Question.where('title LIKE(?)', "%#{keyword}%")
     end
     @questions.uniq!
-    # @tags = Question.tag_counts_on(:tags).order('count DESC')
   end
 
   private

@@ -1,7 +1,7 @@
 <%= render "shared/header_speak" %>
 
 <div class="my_page">
-  <h1><%= @user.nickname %>'s Page</h1>
+  <h1><%= @user.nickname %>s'</h1>
   <p><%= @user.nickname %> has got totally <%= @favorites_count %> favs for now!!!!</p>
   <% if current_user.id == @user.id %>
     <div class="own_favorite_questions">

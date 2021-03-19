@@ -3,17 +3,14 @@
   flex-direction: column;
   justify-content: center;
   height: 70vh;
-  /* border: solid 2px red; */
 }
 
 .answer_header{
   text-align: center;
-  /* border: solid 2px green; */
 }
 
 .answer_message{
   text-align: center;
-  /* border: solid 2px purple; */
 }
 
 .answer_explanation{
@@ -23,26 +20,22 @@
 
 .explanation_content{
   text-align: center;
+  padding: 10px;
   border-bottom: solid 2px red;
-
-  /* border: solid 2px green; */
 }
 
 .retry_message{
   text-align: center;
   font-size: 25px;
-  /* border: solid 2px gold; */
 }
 
 .retry-message{
   text-align: center;
   text-decoration: none;
-  /* border: solid 2px blue; */
 }
 
 .answer_container .top-page{
   text-decoration: none;
   text-align: center;
-  /* color: black; */
   margin-top: 20px;
 }
