@@ -152,28 +152,7 @@ h1{
   width: 100%;
 }
 
-.Time_Line,
-.Search_Words,
-.Tags_List{
-  margin: 0px 5px 0px 10px;
-  text-align: center;
-  font-size: 30px;
-}
 
-.Time_Line{
-  width: 20%;
-  margin-left: 60px;
-}
-
-.Search_Words{
-  width: 30%;
-  margin-right: 20px;
-}
-
-.Tags_List{
-  margin-right: 80px;
-  width: 20%;
-}
 
 .box{
   border-radius: 10px;

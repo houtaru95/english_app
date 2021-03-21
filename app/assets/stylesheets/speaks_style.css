@@ -91,6 +91,30 @@
   border-bottom: solid 2px black;
 }
 
+.Time_Line,
+.Search_Words,
+.Tags_List{
+  /* margin: 0px 5px 0px 10px; */
+  text-align: center;
+  font-size: 30px;
+}
+
+.Time_Line{
+  width: 20%;
+  margin-left: 60px;
+}
+
+.Search_Words{
+  width: 30%;
+  margin-right: 20px;
+}
+
+.Tags_List{
+  margin-right: 20px;
+  width: 20%;
+}
+
+
 .speaks_box{
   height:75vh;
   display: flex;
@@ -112,11 +136,11 @@
 }
 
 .speaks_box_left .speak-subject{
-width: 50%;
+width: 60%;
 }
 
 .speaks_box_left .speak-voice{
-  width: 100%;
+  width: 60%;
 }
 
 .speaks_box_left .tag_list{
@@ -137,7 +161,7 @@ width: 50%;
 }
 
 .speaks_box_center{
-  width: 35%;
+  width: 50%;
   padding: 20px;
   overflow: scroll;
   background-color: lightseagreen;
@@ -176,7 +200,7 @@ width: 50%;
 
 .tag_container .tag_list{
   margin-top: 10px;
-  width: 40%;
+  width: 30%;
   display: flex;
   text-align: left;
 }
@@ -189,7 +213,7 @@ width: 50%;
 
 
 .speaks_box_right{
-  width: 25%;
+  width: 20%;
   padding: 5px 60px 5px 60px;
   margin-right: 40px;
   overflow: scroll;

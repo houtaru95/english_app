@@ -48,6 +48,7 @@
 /* 以下、users/show */
 .my_page_container{
   height: 75vh;
+  overflow: scroll;
 }
 
 .my_page_container .my_page_nickname{
