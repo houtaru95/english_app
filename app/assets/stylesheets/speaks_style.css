@@ -6,6 +6,10 @@
   height: 120px;
 }
 
+.speak_container{
+  height: 70vh;
+}
+
 .speak_show_container{
   height: 75vh;
   overflow: scroll;
