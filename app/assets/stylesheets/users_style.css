@@ -112,6 +112,7 @@
 
 .voice_you_casted .created_at{
   text-align: right;
+  border-bottom: solid 2px lightseagreen;
 }
 
 

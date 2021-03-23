@@ -24,6 +24,11 @@
             <div class="voice"><%= speak.voice %></div>
             <p class="created_at"><%= speak.created_at.strftime("%b %d %H:%M") %></p>
           <% end %>
+          <% if current_user.id == speak.user.id %>
+            <%= link_to speak_path(speak.id), method: :delete, class:"delete",data: {confirm: "Are you sure to delete?"} do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -36,7 +41,7 @@
           <% end %>
           <% if current_user.already_favorited?(question) %>
             <%= link_to question_favorites_path(question), method: :DELETE, class:"fav_heart" do %> 
-              <i class="fas fa-heart"></i> 
+              <i class="fas fa-heart"></i>
             <% end %> 
           <% else %> 
             <%= link_to question_favorites_path(question), method: :POST, class:"fav_heart" do %> 
