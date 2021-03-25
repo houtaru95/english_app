@@ -453,6 +453,11 @@ h1{
 
 .choices{
   display: flex;
+  justify-content: center ;
+}
+
+.choices .choice{
+  margin-right: 50px;
 }
 
 /* 以上、questions/show */
