@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_questions, through: :favorites, source: :question
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
 
   def already_favorited?(question)
     self.favorites.exists?(question_id: question.id)

@@ -13,7 +13,7 @@ class Question < ApplicationRecord
     validates :choice_3, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
     validates :choice_4, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
     validates :answer_num
-    validates :explanation, format: { with: /\A[^ぁ-んァ-ヶ一-龥々ーｧ-ﾝﾞﾟ]+\z/ }
+    validates :explanation
   end
-
+  
 end
